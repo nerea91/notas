@@ -1,0 +1,39 @@
+Se deben de instalar las siguientes extensiones para funcionar con laravel
+
+
+sudo zypper in php-openssl
+sudo zypper in php-tidy
+sudo zypper in php-gettext
+sudo zypper in php-curl
+sudo zypper in php-phar
+sudo zypper in php-mcrypt
+sudo zypper in php-mbstring
+
+
+Instalamos curl (necesario para que funcione laravel):
+
+Lo movemos para que podamos acceder globalmente y creamos un alias
+
+sudo mv composer.phar /usr/local/bin/
+alias composer='/usr/local/bin/composer.phar'
+
+Ejemplo de como crear un proyecto laravel con composer:
+
+composer create-project laravel/laravel --prefer-dist
+
+---------------------------------------------------------------------------------------------------
+
+Para que no de un error 403 Forbidden el servidor de nginx:
+
+sudo usermod -g nginx nerea #cambiamos el grupo principal de nuetro usuario en este caso nerea a nginx
+
+o
+
+sudo usermod -a -G nginx nerea #añadimos a nerea al grupo nginx pero entonces habrá que cambiar el grupo de las nuevas carpetas que creemos:
+
+
+sudo chgrp -R nginx Documentos/offline #aqui cambiamos el grupo de la carpeta offline y todo lo que este dentro a nginx
+
+Puede que dentro de la carpeta el grupo no tenga permiso de lectura por lo que se los damos:
+
+sudo chmod -R g+r /home/nerea/Documentos/offline/

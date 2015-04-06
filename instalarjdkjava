@@ -1,0 +1,25 @@
+ 1) Bajar el archivo .rpm de la pagina oficial en este caso el jdk8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+ 
+ 2) Instalar el RPM
+
+    rpm -ivh  jdk-7*-linux-x64.rpm
+
+ Por defeto se instala en  /usr/java/jdk1.8_20/ creando también los enlaces
+
+3) Actualización de la alternativas
+
+    update-alternatives --install "/usr/bin/java" "java" "/usr/java/latest/bin/java" 1
+    update-alternatives --set java /usr/java/latest/bin/java
+    update-alternatives --install "/usr/bin/javac" "javac" "/usr/java/latest/bin/javac" 1
+    update-alternatives --set javac /usr/java/latest/bin/javac
+
+4) Comprobar que todo está correcto
+
+    java -version
+
+    
+    
+    
+    
+Para cambiar la vm
+update-alternatives --config java 

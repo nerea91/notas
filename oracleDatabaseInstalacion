@@ -1,0 +1,119 @@
+Para instalar oracle database 12 g
+
+-Tener instalado java y la jdk
+-Descargar oracle database 12c http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html
+-Ir a http://software.opensuse.org/download.html?project=openSUSE%3A13.1&package=xhost 
+ Hay que bajarse el paquete binario xhost. Clickar en Grab binary packages directly y bajarse el rpm e instalarlo
+
+1-Comprobar que el sistema esta actualizado: zypper update
+2-Ejecutar el comando hostname para saber nuestro hostname
+3-Añadir en /etc/hosts nuestra ip y nuestro hostname. Ej: 192.168.3     linux-ukm
+4-Ejecutar zypper install libstdc++46-devel libstdc++33 libstdc++33-devel libelf-devel gcc-c++ libaio-devel sysstat unixODBC unixODBC-devel xdpyinfo
+5-Creamos los grupos:
+   groupadd -g 502 oinstall
+   groupadd  -g 503 dba
+   groupadd  -g 504 oper
+   groupadd -g 505 asmadmin
+6-Creamos el usuario oracle y lo añadimos a los siguientes grupos:
+  useradd -u 502 -g oinstall -G dba,asmadmin,oper -s /bin/bash -m oracle
+7-Ponemos la contraseña al usuario oracle:
+  -passwd oracle
+8-Comprobamos el id de oracle:
+  -Ejecutar id oracle
+  -Debe devolver uid=502(oracle) gid=502(oinstall) groups=503(dba),504(oper),505(asmadmin),502(oinstall)
+
+  -Creamos el directorio de instalacion:
+
+  mkdir -p /home/u01/app/oracle/product/12.1.0/dbhome_1
+  chown -R oracle:oinstall /home/u01/
+  chmod -R 775 /home/u01/
+
+9-Configurar los parámetros para el kernel:
+  -Añadir en /etc/sysctl.conf:
+
+    fs.suid_dumpable = 1
+    fs.aio-max-nr = 1048576
+    fs.file-max = 6815744
+    kernel.shmall = 2097152
+    kernel.shmmax = 536870912
+    kernel.shmmni = 4096
+    # semaphores: semmsl, semmns, semopm, semmni
+    kernel.sem = 250 32000 100 128
+    net.ipv4.ip_local_port_range = 9000 65500
+    net.core.rmem_default=4194304
+    net.core.rmem_max=4194304
+    net.core.wmem_default=262144
+    net.core.wmem_max=1048586
+
+10-Configurar los limites:
+   -Añadir en /etc/security/limits.conf:
+    oracle              soft    nproc   2047
+    oracle              hard    nproc   16384
+    oracle              soft    nofile  1024
+    oracle              hard    nofile  65536
+    oracle              soft    stack   10240
+
+11-Cargamos la configuración del kernel nueva:
+   /sbin/sysctl -p
+12-Ir al directorio donde tenemos la descarga de oracle database y descomprimirlo
+  -unzip linuxamd64_12102_database_1of2.zip
+   unzip linuxamd64_12102_database_2of2.zip
+   chown -R oracle:oinstall database
+   mv database /home/oracle
+
+13-Nos logueamos con oracle: su - oracle
+14-vi .bashrc
+  -Y añadimos:
+ Oracle Settings
+ TMP=/tmp; export TMP
+ TMPDIR=$TMP; export TMPDIR
+#ORACLE_HOSTNAME=
+# export ORACLE_HOSTNAME
+ ORACLE_UNQNAME=DB12C; export ORACLE_UNQNAME
+ ORACLE_BASE=/home/u01/app/oracle; export ORACLE_BASE
+ ORACLE_HOME=$ORACLE_BASE/product/12.1.0/dbhome_1; export ORACLE_HOME
+ ORACLE_SID=DB12C
+ export ORACLE_SID
+PATH=/usr/sbin:$PATH; export PATH
+PATH=$ORACLE_HOME/bin:$PATH; export PATH
+LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib; export LD_LIBRARY_PATH
+CLASSPATH=$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib; export CLASSPATH
+
+15-vi .bash_profile
+  -Y añadimos:
+  if [ -f ~/.bashrc ]; then
+ source ~/.bashrc
+ fi
+
+16- export   DISPLAY=hotname:0.0
+    xhost + IP (Puede que esto falle creo que no es necesario)
+17-cd /home/oracle/database
+18-./runInstaller
+
+19-No ponemos el email no es obligatorio
+20-Elegimos Server class 
+21-Single instance database installation
+22-Typical install
+23-Dejamos todo por defecto y ponemos la contraseña de administrador
+24-Continuar hasta que salga la pantalla de que es necesario ejecutar los scripts:
+  -abrir una terminal conectarse como root y ejecutarlos     (cuando pidan el path del directorio bin dar a intro)
+25-Continuamos hasta una pantalla donde sale la url y nos permite administrar las contraseñas:
+  -Le ponemos las contraseñas a los usuarios SYS y SYSTEM y Continuamos
+26-Ejecitamos lsnrctl  status
+Si el comando se ejecuta satisfactoriamente esta en marcha el listener
+
+INSTALADO!!!
+
+Dirección: https://localhost:5500/em
+
+===================================================================
+Para activarlo:
+
+1-Conectarnos como oracle: su oracle
+2-sqlplus "sys as sysdba"
+3-startup
+
+
+
+
+www.unixmen.com/install-oracle-database-12c-opensuse-13-2/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+unixmenhowtos+(Unixmen+Howtos+%26+Tutorials)v
