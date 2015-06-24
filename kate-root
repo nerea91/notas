@@ -1,0 +1,3 @@
+Para ejecutar kate como root:
+
+  -export $(dbus-launch)
