@@ -1,0 +1,18 @@
+Instal mysql:
+  -zypper in mysql-community-server mysql-community-server-client php5-mysql
+  -systemctl start mysql.service
+  -systemctl enable mysql.service
+  -mysql_secure_installation
+
+Install php
+  -zypper in php5
+
+Install nginx:
+  -zypper in nginx
+  -systemctl start nginx.service
+  -systemctl enable nginx.service
+
+Install phpMyAdmin:
+  -zypper in phpmyadmin
+  -chmod a+t+w /var/lib/php5
+  -chmod go-r /var/lib/php5
