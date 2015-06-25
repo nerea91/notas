@@ -1,0 +1,5 @@
+Copiar del origen al destino. Con la opcion --dry-run primero te muestra lo
+que va a hacer. Quitar para realizar la copia. La barra del final solo tiene
+que estar en uno de los dos ejem: /home/nerea/ /home-nerea
+
+rsync --recursive --archive --progress --stats --dry-run --human-readable -x origen destino
