@@ -1,0 +1,73 @@
+#!/bin/sh
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias cd..='cd ..'
+alias df='pydf'
+alias l='locate -i'
+alias ls='ls -lh --color'
+alias la='ls -a'
+alias netstat='netstat -plutanW'
+alias top='htop'
+alias rsync='rsync --recursive --archive --delete --progress --stats --human-readable'
+
+alias grep='grep --colour=auto --exclude-dir=.svn --exclude=*.svn-base --exclude-dir=.git'
+alias g='grep'
+
+alias descomprimir='aunpack'
+alias comprimir='apack'
+
+# Editor
+alias joe='joe --wordwrap'
+alias j='joe'
+alias kate=runkate
+#reuse kate and redirect output and errors to /dev/null
+
+# Common spelling mistakes
+alias car='cat'
+alias vf='cd'
+alias jeo='joe'
+
+# Git
+alias ga='git add'
+alias ga.='ga .'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gc='git commit -v'
+alias gc.='gc .'
+alias gcm='git commit -vm'
+alias gcmm='git commit -m QuickCommit'
+alias gd='git diff'
+alias gd.='gd .'
+alias gds='git diff --staged'
+alias gdt='git difftool -y'
+alias gdtd='git difftool --dir-diff'
+alias gdts='git difftool -y --staged'
+alias gdtsd='git difftool --dir-diff --staged'
+alias gl='git log --decorate=short --graph --stat --oneline' #--no-merges
+alias gll='git log --decorate=short --graph --stat' # --oneline --no-merges
+alias gs='git status -bs'
+alias gs.='gs .'
+alias gr='git remote'
+alias grv='git remote -v'
+alias gmt='git mergetool'
+alias gmty='git mergetool -y'
+
+# Artisan
+alias artisan="run_upstream artisan php artisan --ansi"
+alias art="artisan"
+alias a="artisan"
+alias am="artisan migrate"
+alias ams="artisan migrate --seed"
+alias amr="artisan migrate:refresh"
+alias amrs="artisan migrate:refresh --seed"
+
+# Composer
+alias composer="php /usr/local/bin/composer --ansi"
+alias comp="run_upstream composer.json composer"
+alias dump="comp dump-autoload --optimize"
+
+# Misc
+alias su='sudo su'
+alias lint="git status -s | awk '/s/{print $2}' | xargs -n1 php -l"
+alias t="run_upstream phpunit.xml ./vendor/bin/phpunit"

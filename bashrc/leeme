@@ -1,0 +1,3 @@
+El .bashrc de root va en /root y el de usuario en /home/usuario en mi caso /home/nerea.
+
+En el fichero .alias estan los alias, copiar en /home/nerea
