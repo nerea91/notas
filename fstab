@@ -1,0 +1,4 @@
+Para que se puedan ejecutar los programas ejecutables desde otro disco que no sea el que tiene el sistema
+operativo se tiene que añadir la opcion exec.
+
+LABEL=datos          /mnt/datos           ext4       defaults,users,exec   0 2
