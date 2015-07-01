@@ -1,0 +1,7 @@
+para tener el completado de las funciones de php, laravel etc 
+
+copiar el repositorio de Stolz kate-snippets ir a la carpeta y ejecutar 
+
+mkdir -p /home/nerea/.kde4/share/apps/ktexteditor_snippets/data
+
+for i in `\ls *.xml`; do ./make-symlink.sh $i; done
