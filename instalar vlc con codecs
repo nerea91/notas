@@ -1,0 +1,49 @@
+intalamos vlc:
+	-https://software.opensuse.org/package/vlc
+
+Instalamos los codecs:
+
+	Paso 1
+
+Abrir una terminal y obtener permisos de root mediante el comando su -
+Paso 2
+
+Agregar los repositorios necesarios ejecutando los siguientes comandos:
+Packman
+Versión: 13.2
+
+    zypper ar -f http://packman.inode.at/suse/openSUSE_13.2/ repo-packman
+
+Versión: 13.1
+
+    zypper ar -f http://packman.inode.at/suse/openSUSE_13.1/ repo-packman
+
+Reproducción de DVD
+Versión: 13.2
+
+    zypper ar -f http://opensuse-guide.org/repo/13.2/ repo-libdvdcss
+
+Versión: 13.1
+
+    zypper ar -f http://opensuse-guide.org/repo/13.1/ repo-libdvdcss
+
+Ahora se refrescan mediante el comando:
+
+zypper ref
+
+(pulsa a para aceptar las claves cuando te lo solicite)
+Paso 3
+
+Agregar los paquetes básicos. Copia y pega en la terminal lo adecuado para cada escritorio:
+
+Para KDE:
+
+zypper in libdvdcss2 libxine2-codecs libxine2-pulse k3b-codecs lame gstreamer-0_10-plugins-ffmpeg gstreamer-0_10-plugins-bad gstreamer-0_10-plugins-ugly gstreamer-0_10-plugins-ugly-orig-addon gstreamer-0_10-plugins-good libxine2 libdvdplay0 libdvdread4 libdvdnav4 libmad0 libavutil51 sox libxvidcore4 xvidcore libavcodec52 libavdevice52 libvlc5 lsb pullin-flash-player gstreamer-0_10-fluendo-mp3 gstreamer-0_10-plugins-fluendo_mpegdemux gstreamer-0_10-plugins-fluendo_mpegmux gstreamer-0_10-plugins-base gstreamer-0_10-plugins-good-extra vlc-codecs libquicktime0 gstreamer-0_10-plugins-bad-orig-addon
+
+
+Paso 4
+
+Cuando la instalación del Paso 3 se complete, ejecutar el comando:
+
+zypper dup --from repo-packman
+
