@@ -1,0 +1,2 @@
+Añadir a .bashrc o ejecutar en el terminal:
+	- unset SSH_ASKPASS
