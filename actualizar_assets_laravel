@@ -1,0 +1,5 @@
+./bin/assets -i
+
+para compilar
+
+./bin/assets -w

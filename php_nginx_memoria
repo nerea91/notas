@@ -1,0 +1,10 @@
+/etc/php5/fpm/php.ini
+	max_execution_time = 300
+	memory_limit = 2G 
+
+en  /etc/nginx/servers.conf en el servidor que se quiera modificar añadir
+ fastcgi_read_timeout 300;
+ 
+  sudo systemctl restart nginx.service
+  sudo systemctl restart php-fpm.service
+
