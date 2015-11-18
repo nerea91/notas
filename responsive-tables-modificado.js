@@ -10,25 +10,31 @@ $(document).ready(function() {
 					  splitTable($(element));
 				  });
 				  
-				  $(".scrollable table.responsive > thead > tr.zebra > th:first-child").each(function(i, element) { 
+				  $(".scrollable table.responsive > thead > tr:first-child > th:first-child").each(function(i, element) { 
 					  
-					  if( $(element).attr('colspan') > 1)
-					  {
+					  var element = $(element);
+					  
+					  if(element.attr('colspan') > 1) {
 						  changeColspanTh = true;
-						  var colspan = parseInt($(element).attr('colspan'));
 						  
-						  $(element).attr('colspan', colspan-1);
-						  $(element).css('display', 'table-cell');
+						  var colspan = parseInt(element.attr('colspan'));
+						  
+						  element.attr('colspan', colspan-1);
+						  element.css('display', 'table-cell');
 					  }
 				  });
 				  
 				  $(".scrollable table.responsive > tfoot > tr > td:first-child").each(function(i, element) {
-					  if( $(element).attr('colspan') > 1)
-					  {
+					  
+					  var element = $(element);
+					  
+					  if(element.attr('colspan') > 1) {
 						  changeColspanTf = true;
-						  var colspan = parseInt($(element).attr('colspan'));
-						  $(element).attr('colspan', colspan-1);
-						  $(element).css('display', 'table-cell');
+						  
+						  var colspan = parseInt(element.attr('colspan'));
+						  
+						  element.attr('colspan', colspan-1);
+						  element.css('display', 'table-cell');
 					  }
 				  });
 				  return true;
@@ -40,13 +46,15 @@ $(document).ready(function() {
 				  });
 				  
 				  if(changeColspanTh)
-					  $("table.responsive > thead > tr.zebra > th:first-child").each(function(i, element) {
+					  $("table.responsive > thead > tr:first-child > th:first-child").each(function(i, element) {
+						  var element = $(element);
 						  $(element).attr('colspan', parseInt($(element).attr('colspan'))+1);
 					  });
 				  
 				  if(changeColspanTf)
 					  $("table.responsive > tfoot > tr > td:first-child").each(function(i, element) {
-						  $(element).attr('colspan', parseInt($(element).attr('colspan'))+1);
+						  var element = $(element);
+						  element.attr('colspan', parseInt(element.attr('colspan'))+1);
 						  
 					  });
 				  
