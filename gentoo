@@ -4,6 +4,3 @@
  emerge --update --deep --with-bdeps=y @system
  emerge --update --deep --with-bdeps=y @world
  
- 
-Linux paterna 3.14.14-gentoo-servidor-dell #1 SMP Thu Jul 31 11:29:23 UTC 2014 x86_64 Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz GenuineIntel GNU/Linux
-Revisar cuantos cores utiliza al compilar.
