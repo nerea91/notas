@@ -1,0 +1,11 @@
+net-misc/iputils -caps -filecaps
+# required by www-client/firefox-38.4.0::gentoo
+# required by www-client/firefox (argument)
+>=dev-lang/python-2.7.10-r1:2.7 sqlite
+# required by www-client/chromium-47.0.2526.73::gentoo
+# required by www-client/chromium (argument)
+>=media-libs/harfbuzz-0.9.41 icu
+# required by www-client/chromium-47.0.2526.73::gentoo
+# required by www-client/chromium (argument)
+>=dev-libs/libxml2-2.9.2-r4 icu
+

@@ -1,0 +1,5 @@
+# required by www-client/google-chrome (argument)
+=www-client/google-chrome-47.0.2526.80_p1 ~amd64
+# requerido para jdk 1.8
+dev-java/oracle-jdk-bin
+
