@@ -1,0 +1,10 @@
+/* Mantener gentoo */
+- emerge --sync
+- eix-update
+- emerge --update --deep --with-bdeps=y @system
+- emerge --update --deep --with-bdeps=y @world
+
+Para actuallizar algunal libreria de compilacion de php, por ejemplo hemos instalado php sin curl y queremos habilitarla:
+ 
+ agregamos en /etc/portage/package.use: dev-lang/php curl
+ ejecutamos emerge --newuse dev-lang/php
