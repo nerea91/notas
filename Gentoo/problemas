@@ -1,0 +1,4 @@
+Para solucionar el error
+	-xdm error fatal io error 11 resource temporarily unavailable
+Editar el fichero /usr/lib/X11/xdm/Xsession
+	-cambiar la linea exec xsm por exec /bin/sh /etc/X11/xinit/xinitrc

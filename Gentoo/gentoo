@@ -1,0 +1,6 @@
+ /* Mantener gentoo */
+ emerge --sync
+ eix-update
+ emerge --update --deep --with-bdeps=y @system
+ emerge --update --deep --with-bdeps=y @world
+ 
