@@ -8,3 +8,6 @@ Para actuallizar algunal libreria de compilacion de php, por ejemplo hemos insta
  
  agregamos en /etc/portage/package.use: dev-lang/php curl
  ejecutamos emerge --newuse dev-lang/php
+ 
+Para actualizar por cambios en el USE
+- emerge -avDN @system
