@@ -1,0 +1,4 @@
+cd /var/www/localhost/htdocs and Install phpmyadmin 
+modify the file /etc/vhosts/webapp-config and replace vhost_server="apache" by vhost_server="nginx".
+run /usr/sbin/webapp-config -h localhost -u root -d /phpmyadmin -I phpmyadmin 4.5.3.1 changing 4.5.3.1 for the right version
+

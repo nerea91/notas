@@ -1,0 +1,4 @@
+>=dev-lang/php-5.5.30:5.5 mysqli
+
+>=dev-libs/openssl-1.0.2e
+
