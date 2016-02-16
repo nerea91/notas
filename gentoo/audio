@@ -1,0 +1,9 @@
+Para que funcione el audio en portatil con [AMD] FCH Azalia Controller (rev 02)
+en /etc/modprobe.d/alsa.conf añadir:
+
+# Set this to the correct number of cards.
+options snd cards_limit=2
+
+options snd-ca0106 index=0
+alias snd-card-1 snd-hda-intel
+options snd-hda-intel index=1
