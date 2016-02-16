@@ -1,0 +1,23 @@
+ SET profiling = 1; //activamos profiling
+SELECT @@profiling; // comprobamos que esta a 1
+
+// Realizamos la consulta:
+Select .....
+
+show profiles; // miramos el id de nuestra consulta por ejemplo imaginamos que es el 7
+
+show  profile for query 7; // salen muchos datos vamos a agruparlos
+
+SET @query_id = 7;
+
+SELECT STATE, SUM(DURATION) AS Total_R,
+ ROUND(
+ 100 * SUM(DURATION)/(SELECT SUM(DURATION) FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID = @query_id ), 2) AS Pct_R,
+ COUNT(*) AS Calls,
+ SUM(DURATION) / COUNT(*) AS "R/Call" FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID = @query_id GROUP BY STATE
+ORDER BY Total_R DESC;
+
+ FLUSH STATUS;
+
+ SHOW STATUS WHERE Variable_name LIKE 'Handler%'
+OR Variable_name LIKE 'Created%';
