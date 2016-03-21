@@ -1,0 +1,5 @@
+nice -20 mysqldump --no-create-info -u usuario -p base_dedatos tabla | nice -20 gzip > nombresql.sql.gz
+
+nice -20 da poca prioridad
+--no-create-info solo los datos de la tabla
+gzip comprime

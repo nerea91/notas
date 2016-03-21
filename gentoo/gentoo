@@ -11,3 +11,9 @@ Para actuallizar algunal libreria de compilacion de php, por ejemplo hemos insta
  
 Para actualizar por cambios en el USE
 - emerge -avDN @system
+
+Para hacer una copia del paquete antes de realizar cambios por ejemplo de nginx
+quickpkg www-servers/nginx
+
+Si al realizar los cambios nos falla algo y queremos volver a la copia realizada antes
+emerge -avk  www-servers/nginx
