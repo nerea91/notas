@@ -1,0 +1,9 @@
+Si al hacer genkernel all da problemas porque no encuentra archivos dentro de /var/cache/genkernel/src
+
+mkdir /var/cache/genkernel/src
+cp /usr/share/genkernel/distfiles/* /var/cache/genkernel/src/
+
+Problemas con locale:
+
+export LC_ALL="es_ES.UTF-8"
+locale-gen
