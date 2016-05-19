@@ -2,3 +2,10 @@ Para solucionar el error
 	-xdm error fatal io error 11 resource temporarily unavailable
 Editar el fichero /usr/lib/X11/xdm/Xsession
 	-cambiar la linea exec xsm por exec /bin/sh /etc/X11/xinit/xinitrc
+	
+Si al hacer la instalacion de mysql y ejecutar /usr/bin/mysql_install_db no se encuentra el directorio
+hay que hacer un locate de mysql_install_db. Cuando sabes donde esta, en mi caso /usr/share/mysql/scripts/mysql_install_db
+hay que cambiar al directorio /usr y ejecutarlo desde alli
+
+  cd /usr
+  /usr/share/mysql/scripts/mysql_install_db
