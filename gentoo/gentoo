@@ -10,6 +10,9 @@ Para actuallizar algunal libreria de compilacion de php, por ejemplo hemos insta
  ejecutamos emerge --newuse dev-lang/php
  
 Para actualizar por cambios en el USE
+- emerge --ask --changed-use --deep @world
+
+Para actualizar solo el sistema
 - emerge -avDN @system
 
 Para hacer una copia del paquete antes de realizar cambios por ejemplo de nginx
