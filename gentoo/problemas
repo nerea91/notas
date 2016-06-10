@@ -9,3 +9,8 @@ hay que cambiar al directorio /usr y ejecutarlo desde alli
 
   cd /usr
   /usr/share/mysql/scripts/mysql_install_db
+  
+  
+
+Si al hacer el grant en mysql da un error mysql server has gone away ejecutar
+	mysql_upgrade -p
