@@ -1,0 +1,7 @@
+Si phpmyadmin da un error de no such directory /var/lib/php5/loquesea
+
+sudo mkdir /var/lib/php5/
+
+Si phpmyadmin da un error de permission denied en var/lib/php5
+
+sudo chown nginx:nginx /var/lib/php5/

@@ -20,3 +20,11 @@ quickpkg www-servers/nginx
 
 Si al realizar los cambios nos falla algo y queremos volver a la copia realizada antes
 emerge -avk  www-servers/nginx
+
+
+Resolver bloqueo por uses:
+emerge -av media-libs/fontconfig
+da el siguiente bloqueo 
+app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)] ("app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)]" is blocking sys-libs/zlib-1.2.8-r1)
+Ejecutar:
+USE=-abi_x86_32 emerge -av media-libs/fontconfig

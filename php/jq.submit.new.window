@@ -1,0 +1,11 @@
+$( "form" ).submit(function( event ) {
+
+		var $form = $(this);
+
+		// create popup window
+		var wind = window.open('about:blank', '__foo');
+
+		// submit form to popup window
+		$form.attr("target", "__foo");
+
+});
