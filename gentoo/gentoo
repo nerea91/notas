@@ -5,10 +5,10 @@
 - emerge --update --deep --with-bdeps=y @world
 
 Para actuallizar algunal libreria de compilacion de php, por ejemplo hemos instalado php sin curl y queremos habilitarla:
- 
+
  agregamos en /etc/portage/package.use: dev-lang/php curl
  ejecutamos emerge --newuse dev-lang/php
- 
+
 Para actualizar por cambios en el USE
 - emerge --ask --changed-use --deep @world
 
@@ -21,10 +21,13 @@ quickpkg www-servers/nginx
 Si al realizar los cambios nos falla algo y queremos volver a la copia realizada antes
 emerge -avk  www-servers/nginx
 
+Para instalar una version concreta, por ejemplo kate 4.14.13
+emerge -av =kde-apps/kate-4.14.3
+
 
 Resolver bloqueo por uses:
 emerge -av media-libs/fontconfig
-da el siguiente bloqueo 
+da el siguiente bloqueo
 app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)] ("app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)]" is blocking sys-libs/zlib-1.2.8-r1)
 Ejecutar:
 USE=-abi_x86_32 emerge -av media-libs/fontconfig
