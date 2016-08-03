@@ -1,0 +1,8 @@
+#Crea un usb virtual en formato raw para poder arrancarlo en una maquina virtual
+# El usuario debe estar en los grupos disk wheel vboxusers
+
+##### COMO ROOT NOOOOOO ######
+VBoxManage internalcommands createrawvmdk -filename ~/VirtualBox\ VMs/usb.vmdk -rawdisk /dev/sdc #sustituyendo /dev/sdc por donde este montado el pendrive
+
+#Para montar carpetas
+mount -t vboxsf <shared_folder_name> <mount_point> 
