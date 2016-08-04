@@ -1,0 +1,16 @@
+
+Laravel
+===================================================================================================================
+
+Para poder subir archivos en laravel hay que habilitar  'files'=>true.
+Ir a views/resource/create y poner {!! Form::model($resource, array('route' => "$prefix.store", 'files'=>true)) !!}
+añadir 'files'=>true. tambien en views/resource/edit
+
+
+Si da un error el script gettext al hacer rename ... ... no such file... ir al comando artisan gettext y cambiar 
+md5 por sha1 y añadir .'.php'
+
+
+TPV
+===================================================================================================================
+en linux si no funciona las traducciones del gettext en libraries/MY_Session hay que cambiar setLocale a setlocale(LC_ALL, 'es_ES.UTF-8');
