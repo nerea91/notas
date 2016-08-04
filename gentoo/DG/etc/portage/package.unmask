@@ -1,0 +1,4 @@
+# required by media-video/nvidia-settings-340.58::gentoo
+# required by nvidia-settings (argument)
+# /etc/portage/package.mask/nvidia:
+=x11-drivers/nvidia-drivers-340.93-r1

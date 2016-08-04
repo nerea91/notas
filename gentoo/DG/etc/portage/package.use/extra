@@ -1,0 +1,16 @@
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo[gstreamer]
+# required by kde-base/kdelibs-4.14.20-r2::gentoo
+# required by media-video/vlc-2.2.1-r1::gentoo[kde]
+# required by @__auto_slot_operator_replace_installed__ (argument)
+>=dev-libs/libxml2-2.9.4 -icu
+
+# required by kde-apps/kate-15.12.3::gentoo[addons]
+# required by @selected
+# required by @world (argument)
+>=dev-libs/libgit2-0.23.4 threads
+# required by kde-frameworks/kfilemetadata-5.21.0::gentoo[pdf]
+# required by kde-apps/gwenview-15.12.3::gentoo[semantic-desktop]
+# required by @selected
+# required by @world (argument)
+>=app-text/poppler-0.42.0 qt5
+

@@ -1,0 +1,3 @@
+# required by net-libs/nodejs-0.12.6::gentoo[ssl]
+# required by nodejs (argument)
+>=dev-libs/openssl-1.0.2h -bindist

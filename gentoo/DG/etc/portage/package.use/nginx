@@ -1,0 +1,1 @@
+www-servers/nginx -* http pcre ssl -syslog nginx_modules_http_access nginx_modules_http_auth_basic nginx_modules_http_autoindex nginx_modules_http_fastcgi -map -nginx_modules_http_referer nginx_modules_http_rewrite nginx_modules_http_gzip nginx_modules_http_proxy

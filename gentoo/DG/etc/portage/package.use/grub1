@@ -1,0 +1,8 @@
+# required by sys-boot/grub-0.97-r16::gentoo[-static,ncurses]
+# required by sys-boot/grub:0 (argument)
+>=sys-libs/ncurses-5.9-r5:0 abi_x86_32 -gpm
+# required by sys-libs/ncurses-5.9-r5::gentoo[gpm]
+# required by sys-boot/grub-0.97-r16::gentoo[-static,ncurses]
+# required by sys-boot/grub:0 (argument)
+>=sys-libs/gpm-1.20.7-r2 abi_x86_32
+>=sys-libs/ncurses-5.9-r99 abi_x86_32

@@ -1,0 +1,400 @@
+# required by media-libs/fontconfig-2.11.1-r2::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-libs/expat-2.1.0-r5 abi_x86_32
+# required by media-sound/pulseaudio-8.0::gentoo[caps]
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=sys-libs/libcap-2.24-r2 abi_x86_32
+# required by media-plugins/alsa-plugins-1.0.29::gentoo
+# required by media-sound/pulseaudio-8.0::gentoo[alsa-plugin,alsa]
+# required by net-im/skype-4.3.0.37-r6::gentoo[pulseaudio]
+# required by net-im/skype (argument)
+>=media-libs/alsa-lib-1.0.29 abi_x86_32
+# required by virtual/libmysqlclient-18::gentoo
+# required by virtual/mysql-5.6-r6::gentoo
+# required by dev-qt/qtsql-4.8.6-r1::gentoo[mysql]
+# required by dev-qt/qt3support-4.8.6-r1::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[qt3support]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-db/mysql-5.6.28 abi_x86_32
+# required by x11-libs/libXtst-1.2.2::gentoo
+# required by media-sound/pulseaudio-8.0::gentoo[X]
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=x11-libs/libXi-1.7.5 abi_x86_32
+# required by dev-db/mysql-5.6.28::gentoo
+# required by virtual/libmysqlclient-18::gentoo
+# required by virtual/mysql-5.6-r6::gentoo
+# required by dev-qt/qtsql-4.8.6-r1::gentoo[mysql]
+# required by dev-qt/qt3support-4.8.6-r1::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[qt3support]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=sys-libs/zlib-1.2.8-r1 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=media-libs/libpng-1.6.19 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[xinerama]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-libs/libXinerama-1.1.3 abi_x86_32
+# required by x11-libs/libXrandr-1.5.0::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-libs/libXrender-0.9.9 abi_x86_32
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=dev-qt/qtcore-4.8.6-r2:4 abi_x86_32
+# required by dev-qt/qtsql-4.8.6-r1::gentoo[sqlite]
+# required by dev-qt/qt3support-4.8.6-r1::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[qt3support]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-db/sqlite-3.12.0 abi_x86_32
+# required by x11-libs/libXtst-1.2.2::gentoo
+# required by media-sound/pulseaudio-8.0::gentoo[X]
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=x11-proto/recordproto-1.14.2-r1 abi_x86_32
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=dev-qt/qtgui-4.8.6-r4:4 abi_x86_32
+# required by media-libs/libmng-2.0.2-r1::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[mng]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=virtual/jpeg-0-r2:0 abi_x86_32
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=x11-libs/libXScrnSaver-1.2.2-r1 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[qt3support]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-qt/qt3support-4.8.6-r1 abi_x86_32
+# required by x11-libs/libXcursor-1.1.14::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-libs/libXfixes-5.0.1 abi_x86_32
+# required by x11-libs/libXinerama-1.1.3::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[xinerama]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-proto/xineramaproto-1.2.1-r1 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[xv]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-proto/videoproto-2.3.2 abi_x86_32
+# required by virtual/libffi-3.0.13-r1::gentoo
+# required by dev-libs/glib-2.46.2-r3::gentoo
+# required by media-sound/pulseaudio-8.0::gentoo[glib]
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=dev-libs/libffi-3.2.1 abi_x86_32
+# required by media-libs/libsndfile-1.0.26::gentoo[-minimal]
+# required by media-sound/pulseaudio-8.0::gentoo
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=media-libs/flac-1.3.1-r1 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[xv]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-libs/libXv-1.0.10 abi_x86_32
+# required by net-print/cups-2.0.3::gentoo[ssl]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[cups]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-libs/libgcrypt-1.6.5 abi_x86_32
+# required by media-sound/pulseaudio-8.0::gentoo
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=dev-libs/json-c-0.12 abi_x86_32
+# required by sys-libs/libcap-2.24-r2::gentoo
+# required by media-sound/pulseaudio-8.0::gentoo[caps]
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=sys-apps/attr-2.4.47-r2 abi_x86_32
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=dev-qt/qtdbus-4.8.6-r1:4 abi_x86_32
+# required by dev-qt/qt3support-4.8.6-r1::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[qt3support]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-qt/qtsql-4.8.6-r1:4 abi_x86_32
+# required by dev-db/mysql-5.6.28::gentoo[openssl]
+# required by virtual/libmysqlclient-18::gentoo
+# required by virtual/mysql-5.6-r6::gentoo
+# required by dev-qt/qtsql-4.8.6-r1::gentoo[mysql]
+# required by dev-qt/qt3support-4.8.6-r1::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[qt3support]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-libs/openssl-1.0.2h abi_x86_32
+# required by media-sound/pulseaudio-8.0::gentoo[tcpd]
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=sys-apps/tcp-wrappers-7.6.22-r1 abi_x86_32
+# required by net-libs/gnutls-3.3.17.1::gentoo
+# required by net-print/cups-2.0.3::gentoo[ssl]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[cups]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-libs/libtasn1-4.5 abi_x86_32
+# required by media-libs/libsndfile-1.0.26::gentoo[-minimal]
+# required by media-sound/pulseaudio-8.0::gentoo
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=media-libs/libvorbis-1.3.4 abi_x86_32
+# required by dev-libs/libgcrypt-1.6.5::gentoo
+# required by net-print/cups-2.0.3::gentoo[ssl]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[cups]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-libs/libgpg-error-1.19 abi_x86_32
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-libs/sni-qt-0.2.6-r1 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[cups]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=net-print/cups-2.0.3 abi_x86_32
+# required by x11-libs/libXrandr-1.5.0::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-proto/randrproto-1.5.0 abi_x86_32
+# required by media-sound/pulseaudio-8.0::gentoo
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=media-libs/libsndfile-1.0.26 abi_x86_32
+# required by media-libs/gst-plugins-base-0.10.36-r2::gentoo
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo[gstreamer]
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=media-libs/gstreamer-0.10.36-r2:0.10 abi_x86_32
+# required by media-sound/pulseaudio-8.0::gentoo[asyncns]
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=net-libs/libasyncns-0.8-r3 abi_x86_32
+# required by x11-libs/libSM-1.2.2-r1::gentoo[uuid]
+# required by media-sound/pulseaudio-8.0::gentoo[X]
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=sys-apps/util-linux-2.26.2 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=media-libs/fontconfig-2.11.1-r2 abi_x86_32
+# required by x11-libs/libXfixes-5.0.1::gentoo
+# required by x11-libs/libXcursor-1.1.14::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-proto/fixesproto-5.0-r1 abi_x86_32
+# required by media-libs/freetype-2.5.5::gentoo[bzip2]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=app-arch/bzip2-1.0.6-r6 abi_x86_32
+# required by virtual/pkgconfig-0-r1::gentoo
+# required by sys-apps/dbus-1.10.8-r1::gentoo
+# required by net-print/cups-2.0.3::gentoo[dbus]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[cups]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-util/pkgconfig-0.28-r2 abi_x86_32
+# required by media-libs/gst-plugins-base-0.10.36-r2::gentoo[orc]
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo[gstreamer]
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=dev-lang/orc-0.4.24 abi_x86_32
+# required by dev-qt/qtsql-4.8.6-r1::gentoo[mysql]
+# required by dev-qt/qt3support-4.8.6-r1::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[qt3support]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=virtual/mysql-5.6-r6 abi_x86_32
+# required by media-libs/libmng-2.0.2-r1::gentoo[lcms]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[mng]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=media-libs/lcms-2.6-r1 abi_x86_32
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo[gstreamer]
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=dev-libs/libxml2-2.9.3 abi_x86_32
+# required by net-libs/gnutls-3.3.17.1::gentoo[nls]
+# required by net-print/cups-2.0.3::gentoo[ssl]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[cups]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=virtual/libintl-0-r2 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-libs/libXrandr-1.5.0 abi_x86_32
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=dev-qt/qtxmlpatterns-4.8.6-r1:4 abi_x86_32
+# required by net-libs/gnutls-3.3.17.1::gentoo
+# required by net-print/cups-2.0.3::gentoo[ssl]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[cups]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-libs/nettle-3.2 abi_x86_32
+# required by media-libs/lcms-2.6-r1::gentoo[tiff]
+# required by media-libs/libmng-2.0.2-r1::gentoo[lcms]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[mng]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=media-libs/tiff-4.0.6 abi_x86_32
+# required by virtual/jpeg-0-r2::gentoo
+# required by media-libs/tiff-4.0.6::gentoo[jpeg]
+# required by media-libs/lcms-2.6-r1::gentoo[tiff]
+# required by media-libs/libmng-2.0.2-r1::gentoo[lcms]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[mng]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=media-libs/libjpeg-turbo-1.4.2 abi_x86_32
+# required by x11-libs/libXrender-0.9.9::gentoo
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=x11-proto/renderproto-0.11.1-r1 abi_x86_32
+# required by media-libs/flac-1.3.1-r1::gentoo[ogg]
+# required by media-libs/libsndfile-1.0.26::gentoo[-minimal]
+# required by media-sound/pulseaudio-8.0::gentoo
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=media-libs/libogg-1.3.1 abi_x86_32
+# required by x11-libs/libXScrnSaver-1.2.2-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=x11-proto/scrnsaverproto-1.2.2-r1 abi_x86_32
+# required by net-print/cups-2.0.3::gentoo[ssl]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[cups]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=net-libs/gnutls-3.3.17.1 abi_x86_32
+# required by media-libs/gstreamer-0.10.36-r2::gentoo
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo[gstreamer]
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=dev-libs/glib-2.46.2-r3 abi_x86_32
+# required by media-sound/pulseaudio-8.0::gentoo[alsa-plugin,alsa]
+# required by net-im/skype-4.3.0.37-r6::gentoo[pulseaudio]
+# required by net-im/skype (argument)
+>=media-plugins/alsa-plugins-1.0.29 pulseaudio abi_x86_32
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=dev-qt/qtwebkit-4.8.6-r1:4 -exceptions abi_x86_32
+# required by dev-db/sqlite-3.12.0::gentoo[readline]
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=sys-libs/readline-6.3_p8-r2 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-libs/libICE-1.0.9 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=media-libs/freetype-2.5.5 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-qt/qtscript-4.8.6-r2:4 abi_x86_32
+# required by dev-libs/nettle-3.2::gentoo[gmp]
+# required by net-libs/gnutls-3.3.17.1::gentoo
+# required by net-print/cups-2.0.3::gentoo[ssl]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[cups]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-libs/gmp-6.0.0a abi_x86_32
+# required by dev-libs/glib-2.46.2-r3::gentoo
+# required by media-sound/pulseaudio-8.0::gentoo[glib]
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=virtual/libffi-3.0.13-r1 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-libs/libSM-1.2.2-r1 abi_x86_32
+# required by media-sound/pulseaudio-8.0::gentoo[X]
+# required by media-plugins/alsa-plugins-1.0.29::gentoo[pulseaudio]
+>=x11-libs/libXtst-1.2.2 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[mng]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=media-libs/libmng-2.0.2-r1 abi_x86_32
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=dev-libs/libdbusmenu-qt-0.9.3_pre20140619-r1 abi_x86_32
+# required by dev-qt/qtcore-4.8.6-r2::gentoo[iconv]
+# required by dev-qt/qtxmlpatterns-4.8.6-r1::gentoo
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=virtual/libiconv-0-r2 abi_x86_32
+# required by dev-qt/qtwebkit-4.8.6-r1::gentoo[gstreamer]
+# required by net-im/skype-4.3.0.37-r6::gentoo
+# required by net-im/skype (argument)
+>=media-libs/gst-plugins-base-0.10.36-r2:0.10 abi_x86_32
+# required by dev-qt/qtgui-4.8.6-r4::gentoo
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=x11-libs/libXcursor-1.1.14 abi_x86_32
+# required by net-print/cups-2.0.3::gentoo
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[cups]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=virtual/pkgconfig-0-r1 abi_x86_32
+# required by net-print/cups-2.0.3::gentoo[dbus]
+# required by dev-qt/qtgui-4.8.6-r4::gentoo[cups]
+# required by dev-libs/sni-qt-0.2.6-r1::gentoo
+# required by net-im/skype-4.3.0.37-r6::gentoo[plasma]
+# required by net-im/skype (argument)
+>=sys-apps/dbus-1.10.8-r1 abi_x86_32
+# required by net-im/skype-4.3.0.37-r6::gentoo[pulseaudio]
+# required by net-im/skype (argument)
+>=media-sound/pulseaudio-8.0 abi_x86_32
+# required by dev-db/mysql-5.6.28::gentoo
+>=virtual/libmysqlclient-18 abi_x86_32
+
