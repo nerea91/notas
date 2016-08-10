@@ -1,0 +1,54 @@
+$ hace referencia al final del string
+
+para enontrar $ en la cadena se pone \ delante para que no signifique el final de cadena : \$
+
+Por ejemplo queremos encontrar cualquier cadena que esté entre dos $:
+
+	/\$.+\$/g       / marca el inicio, \$ inidica $, . indica cualquier caracter, + busca uno o mas caracteres del token anterior, /g es el flag global
+
+queremos encontrar cualquier cadena que esté entre dos $ formada por letras mayusculas:
+
+	/\$[A-Z]+\$/g 
+
+^ es para obtener lo contrario del token que lo precede
+
+\s significa espacio en blanco
+
+? indica que el token anterior es opcional
+
+| es or
+
+/i es un flag que indica mayusculas y minusculas
+
+* significa encuentra 0 o muchos del token anterior
+
++ significa encuentra 1 o muchos del token anterior
+
+queremos encontrar una url:
+
+	/(https?://([^\s]+))/g  cada cadena que concuerde con lo limitado en los parentesis es un nuevo grupo.
+
+Por ejemplo si tenemos el siguiente texto: 
+	visit http://example.com to view the email
+
+Y usamos la expresión regular anterior, podemos sustituirlo por:
+	<a href="$1">$2</a>
+
+y el resultado sería:
+	Visit <a href"http://example.com">example.com</a> to view the email
+
+Si queremos que el ejemplo anterior funcione también funcione con ftp:
+
+	/((?:ht|f)tps?://([^\s]+))/g       usamos ?: para que no cuente como grupo a la hora de sustituir
+	
+Queremos sustituir la palabra idiot y la palabra idiotic:
+
+/idiot(ic)?/g		al poner entre parentesis la ic seguidos de un ? estamos indicando que ambas son opcionales
+
+Si queremos buscar 3 w podemos hacer:
+
+	/[w]{3}/g
+
+Si queremos buscar como minimo 3 w y como macimo 5 podemos hacer:
+
+	/[w]{3,5}/g
