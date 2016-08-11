@@ -24,6 +24,8 @@ queremos encontrar cualquier cadena que esté entre dos $ formada por letras may
 
 + significa encuentra 1 o muchos del token anterior
 
+\w hace referencia a cualqier letra y numero
+
 queremos encontrar una url:
 
 	/(https?://([^\s]+))/g  cada cadena que concuerde con lo limitado en los parentesis es un nuevo grupo.
@@ -52,3 +54,14 @@ Si queremos buscar 3 w podemos hacer:
 Si queremos buscar como minimo 3 w y como macimo 5 podemos hacer:
 
 	/[w]{3,5}/g
+	
+Si queremos solo sustituir la palabra google seguida de <:
+
+  para indicar que al final de la palabra tiene que haber el caracter x se usa (?=x)
+  <a href="http://google.com">Google</a>   usaríamos /google(?=<)/ig
+  
+  siguiendo con el ejemplo anterior para seleccionar la palabra google que no este seguida de < se usa (?!<)
+
+Si queremos sustituir una palabra que empiece por x usaríamos (?<=x)
+
+Si queremos sustituir una palabra que no empiece por x usaríamos (?<!x)
