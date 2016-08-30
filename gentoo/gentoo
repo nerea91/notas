@@ -1,6 +1,14 @@
 /* Mantener gentoo */
 - emerge --sync
 - eix-update
+- eix eix
+- emerge -avu eix;#(*)
+- eix-update;#(*)
+- eix -I portage
+emerge -avu --oneshot sys-apps/portage app-portage/portage-utils;#(*)
+
+#(*) Solo si es necesario
+
 - emerge --update --deep --with-bdeps=y @system
 - emerge --update --deep --with-bdeps=y @world
 
