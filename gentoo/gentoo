@@ -1,4 +1,5 @@
 /* Mantener gentoo */
+- screen
 - emerge --sync
 - eix-update
 - eix eix

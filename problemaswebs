@@ -14,3 +14,7 @@ md5 por sha1 y añadir .'.php'
 TPV
 ===================================================================================================================
 en linux si no funciona las traducciones del gettext en libraries/MY_Session hay que cambiar setLocale a setlocale(LC_ALL, 'es_ES.UTF-8');
+
+===================================================================================================================
+Al hacer un wget para que te puestre el resultado en consola añadir los parametros:
+wget -q  -O - url_peticion
