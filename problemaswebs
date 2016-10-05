@@ -10,6 +10,8 @@ añadir 'files'=>true. tambien en views/resource/edit
 Si da un error el script gettext al hacer rename ... ... no such file... ir al comando artisan gettext y cambiar 
 md5 por sha1 y añadir .'.php'
 
+Para ejecutar un script despues de cada commit crear dentro del proyecto el archivo .git/hooks/post-commit y poner ahí el script
+
 
 TPV
 ===================================================================================================================
