@@ -1,4 +1,7 @@
 /* Mantener gentoo */
+
+#Si hay actualización tanto para portage como para eix, actualizar primero portage
+
 - screen
 - emerge --sync
 - eix-update
@@ -41,3 +44,6 @@ da el siguiente bloqueo
 app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)] ("app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)]" is blocking sys-libs/zlib-1.2.8-r1)
 Ejecutar:
 USE=-abi_x86_32 emerge -av media-libs/fontconfig
+
+#compila todo lo que exista en eix de perl(cambiar por el paquete que se quiera) que este instalado y se pueda acrualizar
+emerge -avu $(eix perl -I#u)
