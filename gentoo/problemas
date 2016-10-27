@@ -14,3 +14,7 @@ hay que cambiar al directorio /usr y ejecutarlo desde alli
 
 Si al hacer el grant en mysql da un error mysql server has gone away ejecutar
 	mysql_upgrade -p
+	
+
+Si al intentar acceder a un recurso mediante el protocolo smb nos da un mensaje de error: invalid protocolo
+	sudo USE="samba" emerge -avu kde-apps/kdebase-kioslaves
