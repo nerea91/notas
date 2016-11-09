@@ -47,3 +47,8 @@ USE=-abi_x86_32 emerge -av media-libs/fontconfig
 
 #compila todo lo que exista en eix de perl(cambiar por el paquete que se quiera) que este instalado y se pueda acrualizar
 emerge -avu $(eix perl -I#u)
+
+#Para saber si la aceleracion 3d esta activada
+DISPLAY=:0 XAUTHORITY=/home/nerea/.Xauthority  glxinfo | grep -i yes
+
+tiene que aparecer direct rendering: Yes
