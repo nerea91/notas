@@ -18,5 +18,14 @@ TPV
 en linux si no funciona las traducciones del gettext en libraries/MY_Session hay que cambiar setLocale a setlocale(LC_ALL, 'es_ES.UTF-8');
 
 ===================================================================================================================
+
 Al hacer un wget para que te puestre el resultado en consola añadir los parametros:
 wget -q  -O - url_peticion
+
+
+Informes
+===================================================================================================================
+Para cambiar el idioma en la página de informes hay que cambiar el idioma del usuario o entrar añadiendo ?lang=en_US a la url
+
+http://informes/index.php?lang=en_US # donde en_US es el idioma al que queremos cambiar
+===================================================================================================================
