@@ -1,0 +1,9 @@
+editar /usr/share/config/kdm/kdmrc y cambiar 
+	ServerArgsLocal=-nolisten tcp 
+	
+	por
+	
+	ServerArgsLocal=-listen tcp
+	
+	
+ejecutar xhost +

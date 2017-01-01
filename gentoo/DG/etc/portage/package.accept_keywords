@@ -1,0 +1,54 @@
+# required by net-im/skype (argument)
+=net-im/skype-4.3.0.37-r6 ~amd64
+# required by www-client/google-chrome (argument)
+=www-client/google-chrome-50.0.2661.102 ~amd64
+# required by  atom
+=app-editors/atom-bin-1.7.3 ~amd64
+
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/net-sftp-2.1.2-r2 ~amd64
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby20]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/childprocess-0.5.9 ~amd64
+# required by dev-ruby/rb-inotify-0.9.7::gentoo
+# required by dev-ruby/listen-3.1.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant (argument)
+=virtual/ruby-ffi-3 ~amd64
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/net-scp-1.2.1 ~amd64
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/net-ssh-3.1.1 ~amd64
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/listen-3.1.1 ~amd64
+# required by dev-ruby/net-scp-1.2.1::gentoo[ruby_targets_ruby20]
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/net-ssh-2.10.0 ~amd64
+# required by app-emulation/vagrant (argument)
+=app-emulation/vagrant-1.8.1 ~amd64
+# required by dev-ruby/listen-3.1.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/rb-inotify-0.9.7 ~amd64
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/rest-client-1.8.0-r1 ~amd64
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/bundler-1.10.6 ~amd64
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/i18n-0.7.0-r2 ~amd64
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby20]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/hashicorp-checkpoint-0.1.4 ~amd64
+# required by dev-ruby/childprocess-0.5.9::gentoo[ruby_targets_ruby21]
+# required by app-emulation/vagrant-1.8.1::gentoo[ruby_targets_ruby20]
+# required by app-emulation/vagrant (argument)
+=dev-ruby/ffi-1.9.10-r1 ~amd64
+

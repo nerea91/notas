@@ -1,0 +1,58 @@
+#copy in /etc/udev/rules.d/51-android.rules
+
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0bb4", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0e79", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0502", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0b05", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="413c", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0489", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="091e", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="18d1", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0bb4", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="12d1", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="24e3", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2116", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0482", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="17ef", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1004", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="22b8", MODE="0666", GROUP="plugdev"    
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0409", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2080", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0955", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2257", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="10a9", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1d4d", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0471", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04da", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="05c6", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1f53", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04e8", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04dd", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0fce", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0930", MODE="0666", GROUP="plugdev"  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", MODE="0666", GROUP="plugdev" 
+
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="2717", ATTRS{idProduct}=="ff08", MODE="0666", OWNER="nerea", GROUP="plugdev"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2717", SYSFS{idProduct}=="ff08", MODE="0777", GROUP="plugdev"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2717", SYSFS{idProduct}=="ff08", MODE="0666", GROUP="plugdev"
+
+
+# Xiaomi Hongmi - TWRP or CWM: recognized as HTC (High Tech Computer Corp.) Android Phone [Fairphone First Edition (FP1)]
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0c03", MODE="0666", OWNER="nerea", GROUP="plugdev"
+# Xiaomi Hongmi WCDMA - PTP Mode
+SUBSYSTEM=="usb", ATTR{idVendor}=="2717", ATTR{idProduct}=="1210", MODE="0666", OWNER="nerea", GROUP="plugdev"
+# Xiaomi Hongmi WCDMA - PTP Mode with USB Debug
+SUBSYSTEM=="usb", ATTR{idVendor}=="2717", ATTR{idProduct}=="1218", MODE="0666", OWNER="nerea", GROUP="plugdev"
+# Xiaomi Hongmi WCDMA - USB Mode == Built-in CD-ROM Mode!
+SUBSYSTEM=="usb", ATTR{idVendor}=="2717", ATTR{idProduct}=="1220", MODE="0666", OWNER="nerea", GROUP="plugdev"
+# Xiaomi Hongmi WCDMA - USB Mode with USB Debug
+SUBSYSTEM=="usb", ATTR{idVendor}=="2717", ATTR{idProduct}=="1228", MODE="0666", OWNER="nerea", GROUP="plugdev"
+# Xiaomi Hongmi WCDMA - MTP Mode
+SUBSYSTEM=="usb", ATTR{idVendor}=="2717", ATTR{idProduct}=="1240", MODE="0666", OWNER="nerea", GROUP="plugdev"
+# Xiaomi Hongmi WCDMA - MTP Mode with USB Debug
+SUBSYSTEM=="usb", ATTR{idVendor}=="2717", ATTR{idProduct}=="1248", MODE="0666", OWNER="nerea", GROUP="plugdev"
+
+#Tablet Xor
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1d6b", ATTR{idProduct}=="0002",MODE="0666", GROUP="plugdev"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2207", ATTR{idProduct}=="0010",MODE="0666", GROUP="plugdev"

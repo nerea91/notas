@@ -1,0 +1,8 @@
+# required by www-client/chromium-50.0.2661.102::gentoo
+# required by www-client/chromium (argument)
+>=dev-libs/libxml2-2.9.3 icu
+# required by dev-libs/libxml2-2.9.3::gentoo[icu]
+# required by www-client/chromium-50.0.2661.102::gentoo
+# required by www-client/chromium (argument)
+>=dev-libs/icu-57.1 abi_x86_32
+

@@ -1,0 +1,4 @@
+Para obtener los datos necesarios para udev:
+
+lsusb #identificamos el dispositivo
+udevadm info -a -p $(udevadm info -q path /dev/bus/usb/001/007) # donde /dev/bus/usb/001/007 es la ruta a el dispositivo identificado

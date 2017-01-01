@@ -1,0 +1,25 @@
+	$( "form" ).submit(function( event ) {
+			var $form = $(this);
+			var values = {};
+			$.each($('form').serializeArray(), function(i, field) {
+
+				$is_array = field.name.indexOf("[]");
+
+				if(typeof(values[field.name]) == "undefined" && $is_array != -1 )
+				{
+					values[field.name] = [];
+					values[field.name].push(field.value);
+				}
+				else if($is_array != -1) {
+					values[field.name].push(field.value);
+				}
+				else
+			    	values[field.name] = field.value;
+			});
+
+			$.post( $form.attr('action'), values)
+			  .done(function( data ) {
+					//TODO whatever...
+					$('input[type="submit"]').prop('disabled', false);
+			  });
+	});

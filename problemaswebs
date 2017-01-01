@@ -1,0 +1,31 @@
+
+Laravel
+===================================================================================================================
+
+Para poder subir archivos en laravel hay que habilitar  'files'=>true.
+Ir a views/resource/create y poner {!! Form::model($resource, array('route' => "$prefix.store", 'files'=>true)) !!}
+añadir 'files'=>true. tambien en views/resource/edit
+
+
+Si da un error el script gettext al hacer rename ... ... no such file... ir al comando artisan gettext y cambiar 
+md5 por sha1 y añadir .'.php'
+
+Para ejecutar un script despues de cada commit crear dentro del proyecto el archivo .git/hooks/post-commit y poner ahí el script
+
+
+TPV
+===================================================================================================================
+en linux si no funciona las traducciones del gettext en libraries/MY_Session hay que cambiar setLocale a setlocale(LC_ALL, 'es_ES.UTF-8');
+
+===================================================================================================================
+
+Al hacer un wget para que te puestre el resultado en consola añadir los parametros:
+wget -q  -O - url_peticion
+
+
+Informes
+===================================================================================================================
+Para cambiar el idioma en la página de informes hay que cambiar el idioma del usuario o entrar añadiendo ?lang=en_US a la url
+
+http://informes/index.php?lang=en_US # donde en_US es el idioma al que queremos cambiar
+===================================================================================================================

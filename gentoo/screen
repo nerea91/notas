@@ -1,0 +1,6 @@
+screen -S nombre // crea una pantalla virtual con nombre nombre
+screen -list // muestra las pantallas existentes
+screen -r nombre // abre el screen nombre
+screen -x nombre // abre el screen nommbre aunque no lo hayas abierto tu
+
+Para salir sin cerrar la pantalla de un screen cntrl+a +d 

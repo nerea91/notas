@@ -1,0 +1,36 @@
+rsync -uva --progress /var/lib/mysql/* /otrositio/mysql/ # mover las bases de datos a otrositio
+
+# /etc/fstab
+/otrositio/mysql              /var/lib/mysql                 none    bind    0 0 #montar el directorio en el de mysql
+
+#montar todo el fstab
+mount -a
+
+#comprobar que se ha montado
+mount
+
+#desmontar
+umont /otrositio/mysql
+
+#parar mysql
+/etc/init.d/mysql stop
+
+#mover el directorio original
+mv /var/lib/mysql /var/lib/mysql.borrar
+mkdir /var/lib/mysql
+
+#crear los permisos
+chmod --reference=/var/lib/mysql.borrar /var/lib/mysql
+chown --reference=/var/lib/mysql.borrar /var/lib/mysql
+
+#montar todo el fstab
+mount -a
+
+#iniciarr mysql
+/etc/init.d/mysql start
+
+si da problemas de permisos volver a ejecutar el paso #crear los permisos
+
+#una vez esta todo funcionando borrar el directorio antiguo
+rm -rf /var/lib/mysql.borra
+

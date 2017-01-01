@@ -1,19 +1,54 @@
 /* Mantener gentoo */
+
+#Si hay actualización tanto para portage como para eix, actualizar primero portage
+
+- screen
 - emerge --sync
 - eix-update
+- eix eix
+- emerge -avu eix;#(*)
+- eix-update;#(*)
+- eix -I portage
+emerge -avu --oneshot sys-apps/portage app-portage/portage-utils;#(*)
+
+#(*) Solo si es necesario
+
 - emerge --update --deep --with-bdeps=y @system
 - emerge --update --deep --with-bdeps=y @world
 
 Para actuallizar algunal libreria de compilacion de php, por ejemplo hemos instalado php sin curl y queremos habilitarla:
- 
+
  agregamos en /etc/portage/package.use: dev-lang/php curl
  ejecutamos emerge --newuse dev-lang/php
- 
+
 Para actualizar por cambios en el USE
+- emerge --ask --changed-use --deep @world
+
+Para actualizar solo el sistema
 - emerge -avDN @system
 
 Para hacer una copia del paquete antes de realizar cambios por ejemplo de nginx
-quickpkg www-servers/nginx
+quickpkg www-servers/nginx # si queremos guardar la configuracion añadimos --include-config=y 
+
 
 Si al realizar los cambios nos falla algo y queremos volver a la copia realizada antes
 emerge -avk  www-servers/nginx
+
+Para instalar una version concreta, por ejemplo kate 4.14.13
+emerge -av =kde-apps/kate-4.14.3
+
+
+Resolver bloqueo por uses:
+emerge -av media-libs/fontconfig
+da el siguiente bloqueo
+app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)] ("app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)]" is blocking sys-libs/zlib-1.2.8-r1)
+Ejecutar:
+USE=-abi_x86_32 emerge -av media-libs/fontconfig
+
+#compila todo lo que exista en eix de perl(cambiar por el paquete que se quiera) que este instalado y se pueda acrualizar
+emerge -avu $(eix perl -I#u)
+
+#Para saber si la aceleracion 3d esta activada
+DISPLAY=:0 XAUTHORITY=/home/nerea/.Xauthority  glxinfo | grep -i yes
+
+tiene que aparecer direct rendering: Yes

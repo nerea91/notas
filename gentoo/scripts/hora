@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if  [ -z $1 ]; then
+	echo "Escribe la fecha y hora de la siguiente manera:"
+	echo " $0 MMDDhhmmAAAA"
+else
+	date $1
+	hwclock --systohc
+	hwclock
+	touch -m /etc/{conf.d,init.d}/*
+fi
