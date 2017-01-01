@@ -1,0 +1,64 @@
+ ## regiones y zonas
+ aws ec2 describe-regions
+ aws ec2 describe-availability-zones --region eu-west-1
+
+## key ssh
+ aws ec2 create-key-pair --key-name alucloud$ID-keypair --query 'KeyMaterial' > alucloud$ID-priv.pem
+ chmod 0600 alucloud$ID-priv.pem
+ ssh -i alucloud$ID-priv.pem ec2-user@ ec2-54-197-109-185.compute-1.amazonaws.com
+
+##Grupos de seguridad y puertos
+ aws ec2 create-security-group --group-name gs-aws-$ID --description 'Puertos 80 y 22 abiertos'
+ aws ec2 authorize-security-group-ingress --group-name gs-aws-$ID --protocol tcp --port 80 --cidr 0.0.0.0/0
+ aws ec2 authorize-security-group-ingress --group-name gs-aws-$ID --protocol tcp --port 22 --cidr 0.0.0.0/0
+ aws ec2 describe-security-groups
+
+## AMI
+ aws ec2 describe-images --owners amazon
+ aws ec2 describe-images --image-ids ami-b1300ed8 
+ aws ec2 run-instances --image-id ami-2ad7a23d --key-name alucloud$ID-keypair --security-groups gs-aws-$ID --instance-type t1.micro
+ aws ec2 describe-instances
+ aws ec2 describe-instances --output json --instance-ids i-960d58b8
+ aws ec2 describe-instances --instance-ids i-4d653163 --query 'Reservations[*].Instances[*].[InstanceId,PublicDnsName]'
+ aws ec2 describe-instances --filters "Name=key-name,Values=alucloud$ID-keypair"
+ aws ec2 describe-instances --filters "Name=key-name,Values=alucloud$ID-keypair" --query 'Reservations[*].Instances[*].[InstanceId,PublicDnsName]'
+ aws ec2 create-tags --resources i-960d58b8 --tags Key=Name,Value="nombre de la instancia"
+ aws ec2 run-instances --image-id ami-b1300ed8 --key-name alucloud$ID-keypair --security-groups gs-aws-$ID --instance-type t1.micro --placement AvailabilityZone=us-east-1e
+ aws ec2 stop-instances --instance-ids i-4d653163
+ aws ec2 start-instances --instance-ids i-4d653163
+ aws ec2 terminate-instances --instance-ids i-960d58b8
+ aws ec2 create-image --instance-id i-0aecbd24 --name "amicursocloudaws$ID" #crear ami a partir de una existente
+ aws ec2 describe-images --owners self
+ aws ec2 deregister-image --image-id ami-fb1a1c92 # de-registrar la ami creada a patir de una existente
+ 
+ #ebs
+ aws ec2 describe-volumes | grep i-4d653163
+ aws ec2 describe-volumes --volume-ids vol-a1961ed7
+ aws ec2 create-volume --size 10 --availability-zone us-east-1e
+ aws ec2 create-tags --resources vol-439d9b0e --tags Key=Name,Value="vol-alucloud$ID"
+ aws ec2 describe-volumes --output json --filters "Name=volumeid,Values=vol-439d9b0e"
+ aws ec2 attach-volume --volume-id vol-439d9b0e --instance-id i-11646b31 --device /dev/sdf
+ aws ec2 create-snapshot --volume-id vol-439d9b0e
+ aws ec2 describe-snapshots --output json --snapshot-ids snap-3d2213f8-
+ aws ec2 describe-volumes --output json --filters "Name=volumeid,Values=vol-d4acaa99"
+ aws ec2 create-volume --size 15 --availability-zone us-east-1e --snapshot-id snap-3d2213f8
+ aws ec2 detach-volume --volume-id vol-d4acaa99
+ aws ec2 delete-volume --volume-id vol-d4acaa99
+ aws ec2 delete-snapshot --snapshot-id snap-3d2213f8
+ 
+ #S3
+ aws s3 mb s3://alucloud$ID
+ aws s3 ls s3://alucloud$ID
+ aws s3 rb s3://alucloud$ID
+ aws s3 cp hello.txt s3://alucloud/$ID/hello.txt
+ aws s3 cp hello.txt s3://alucloud/$ID/hello-pub.txt --acl public-read
+ aws s3 rm s3://alucloud/$ID/hello.txt
+ aws s3 website s3://alucloud$ID --index-document index.html
+ aws s3 rm --recursive s3://alucloud$ID
+ 
+ ##ELB
+  aws elb create-load-balancer --load-balancer-name alucloud$ID-lb --availability-zones us-east-1e us-east-1c --listeners Protocol=http,LoadBalancerPort=80,InstancePort=80
+  aws elb register-instances-with-load-balancer --load-balancer alucloud$ID-lb --instances i-044a74e838b799d61 i-0f00d781fea526d94
+  aws elb --output json describe-load-balancers --load-balancer-names alucloud$ID-lb
+  aws elb deregister-instances-from-load-balancer --load-balancer-name alucloud$ID-lb --instances i-044a74e838b799d61 i-0f00d781fea526d94
+  aws elb delete-load-balancer --load-balancer-name alucloud$ID-lb
