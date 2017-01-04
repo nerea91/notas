@@ -15,7 +15,7 @@
 
 ## AMI
  aws ec2 describe-images --owners amazon
- aws ec2 describe-images --image-ids ami-b1300ed8 
+ aws ec2 describe-images --image-ids ami-b1300ed8
  aws ec2 run-instances --image-id ami-2ad7a23d --key-name alucloud$ID-keypair --security-groups gs-aws-$ID --instance-type t1.micro
  aws ec2 describe-instances
  aws ec2 describe-instances --output json --instance-ids i-960d58b8
@@ -30,7 +30,7 @@
  aws ec2 create-image --instance-id i-0aecbd24 --name "amicursocloudaws$ID" #crear ami a partir de una existente
  aws ec2 describe-images --owners self
  aws ec2 deregister-image --image-id ami-fb1a1c92 # de-registrar la ami creada a patir de una existente
- 
+
  #ebs
  aws ec2 describe-volumes | grep i-4d653163
  aws ec2 describe-volumes --volume-ids vol-a1961ed7
@@ -45,7 +45,7 @@
  aws ec2 detach-volume --volume-id vol-d4acaa99
  aws ec2 delete-volume --volume-id vol-d4acaa99
  aws ec2 delete-snapshot --snapshot-id snap-3d2213f8
- 
+
  #S3
  aws s3 mb s3://alucloud$ID
  aws s3 ls s3://alucloud$ID
@@ -55,14 +55,14 @@
  aws s3 rm s3://alucloud/$ID/hello.txt
  aws s3 website s3://alucloud$ID --index-document index.html
  aws s3 rm --recursive s3://alucloud$ID
- 
+
  ##ELB
   aws elb create-load-balancer --load-balancer-name alucloud$ID-lb --availability-zones us-east-1e us-east-1c --listeners Protocol=http,LoadBalancerPort=80,InstancePort=80
   aws elb register-instances-with-load-balancer --load-balancer alucloud$ID-lb --instances i-044a74e838b799d61 i-0f00d781fea526d94
   aws elb --output json describe-load-balancers --load-balancer-names alucloud$ID-lb
   aws elb deregister-instances-from-load-balancer --load-balancer-name alucloud$ID-lb --instances i-044a74e838b799d61 i-0f00d781fea526d94
   aws elb delete-load-balancer --load-balancer-name alucloud$ID-lb
-  
+
   #Pasos a seguir para creación de dos instancias con elb y autoescalado
    -Se crean las dos instancias en diferentes regiones
    -Se crea el elb para esas dos instancias
@@ -70,3 +70,10 @@
    -Se crea un grupo de autoescalado
    -Se crean las poliicas de autoescalado
    -Se crean las alarmas para las políticas de auto-escalado.
+
+
+   Una instancia de EC2 desplegada en EC2-Classic, al detenerla y volver a iniciar cambia su IP. Si le asocias una IP elástica y la detienes la IP elástica se desasocia de la instancia.
+
+   Una instancia de EC2 desplegada en un VPC a la que se asocia una IP elástica la mantiene al detener la instancia y volverla a iniciar, por lo que no no es necesario cambiar la IP.
+
+   Una instancia de RDS no tiene una IP asociada, tiene un nombre DNS. El nombre DNS no cambia al hacer una operación de cambio de tipo de instancia.
