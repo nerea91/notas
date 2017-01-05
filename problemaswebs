@@ -1,4 +1,10 @@
 
+Para traducir a ruso:
+
+Instalar la locale en el servidor-> añadir en en /etc/locale.gen ru_RU.UTF-8 UTF-8
+ejecutar locale-gen
+Instalar php con cjk
+
 Laravel
 ===================================================================================================================
 
