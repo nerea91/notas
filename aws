@@ -62,13 +62,31 @@
   aws elb --output json describe-load-balancers --load-balancer-names alucloud$ID-lb
   aws elb deregister-instances-from-load-balancer --load-balancer-name alucloud$ID-lb --instances i-044a74e838b799d61 i-0f00d781fea526d94
   aws elb delete-load-balancer --load-balancer-name alucloud$ID-lb
+  
+##Autoescalado
+  #configuración de lanzamiento
+  aws autoscaling create-launch-configuration --launch-configuration-name wp-launch-config-$ID --image-id ami-fd054e94 --instance-type m1.small --security-groups gs-aws-$ID --key-name alucloud$ID-keypair
+  #creacion del grupo
+  aws autoscaling create-auto-scaling-group --auto-scaling-group-name as-wp-group-$ID --launch-configuration-name wp-launch-config-$ID --availability-zones us-east-1e us-east-1c --min-size 1 --max-size 2 --default-cooldown 120 --load-balancer-names wp-$ID-lb
+  
+  #Creamos y añadimos regla de escalado que incrementa el tamaño del grupo en un 25% si el promedio de uso de las instancias del grupo de escalado supera el 70% durante al menos dos peridos de 1 minuto
+  aws autoscaling put-scaling-policy --policy-name pol-wp-$ID-scale-OUT-on-CPU --auto-scaling-group-name as-wp-group-$ID --adjustment-type PercentChangeInCapacity --scaling-adjustment 25 --cooldown 120#creamos una política
+  aws cloudwatch put-metric-alarm --alarm-name alarm-wp-$ID-scale-OUT-on-CPU --alarm-actions arn:aws:autoscaling:us-east-1:974349055189:scalingPolicy:5d9778de-8318-45fb-bf32-257318c27f46:autoScalingGroupName/as-wp-group-57:policyName/pol-wp-57-scale-OUT-on-CPU --metric-name CPUUtilization --unit Percent --namespace AWS/EC2 --statistic Average --dimensions="Name=AutoscalingGroupName,Value=as-wp-group-$ID" --period 60 --evaluation-periods 2 --threshold 70 --comparison-operator GreaterThanThreshold
+  #Creamos y añadimos regla de escalado que decrementa el tamaño del grupo en un 25% si el promedio de uso de las instancias del grupo de escalado baja del 20% durante al menos dos peridos de 1 minuto
+  INPOLICY=`aws autoscaling put-scaling-policy --policy-name pol-wp-$ID-scale-IN-on-CPU --auto-scaling-group-name as-wp-group-$ID --adjustment-type PercentChangeInCapacity --scaling-adjustment 25 --cooldown 120`
+  aws cloudwatch put-metric-alarm --alarm-name alarm-wp-$ID-scale-IN-on-CPU --alarm-actions $INPOLICY --metric-name CPUUtilization --unit Percent --namespace AWS/EC2 --statistic Average --dimensions="Name=AutoscalingGroupName,Value=as-wp-group-$ID" --period 60 --evaluation-periods 2 --threshold 20 --comparison-operator LessThanThreshold
+  #Eliminamos los recursos
+  aws autoscaling update-auto-scaling-group --auto-scaling-group-name as-wp-group-$ID --min-size 0 --max-size 0
+  aws autoscaling delete-auto-scaling-group --auto-scaling-group-name as-wp-group-$ID
+  aws autoscaling delete-launch-configuration --launch-configuration-name wp-launch-config-$ID
+  aws elb delete-load-balancer --load-balancer-name wp-$ID-lb
+  
 
-  #Pasos a seguir para creación de dos instancias con elb y autoescalado
-   -Se crean las dos instancias en diferentes regiones
-   -Se crea el elb para esas dos instancias
+  #Pasos a seguir para creación de una instancia con elb y autoescalado
+   -Se crea el elb
    -Se crea una configuración de lanzamiento
-   -Se crea un grupo de autoescalado
-   -Se crean las poliicas de autoescalado
+   -Se crea un grupo de autoescalado (en este punto se inician tantas instancias como hayamos indicado en el nº minimo)
+   -Se crean y añaden las politicas de autoescalado
    -Se crean las alarmas para las políticas de auto-escalado.
 
 
