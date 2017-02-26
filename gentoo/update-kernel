@@ -1,0 +1,3 @@
+genkernel all
+genkernel --menuconfig --bootloader=grub all
+grub-mkconfig -o /boot/grub/grub.cfg
