@@ -1,0 +1,3 @@
+cat /proc/asound/modules
+cat /proc/asound/cards
+
