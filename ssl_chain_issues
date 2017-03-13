@@ -1,0 +1,7 @@
+composer global require spatie/ssl-certificate-chain-resolver
+
+cd /home/nerea/.composer/vendor/spatie/ssl-certificate-chain-resolver
+
+./ssl-certificate-chain-resolver resolve certificado_a_resolver
+
+Esto genera un archivo certificate-including-trust-chain.crt que incluye el certificado con los certificados intermedios que faltaban
