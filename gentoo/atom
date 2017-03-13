@@ -1,0 +1,9 @@
+emerge -av layman
+layman -S
+layman -f -a jorgicio
+echo 'PORTDIR_OVERLAY="/var/lib/layman/jorgicio $PORTDIR_OVERLAY"' >> /etc/portage/make.conf
+echo "=app-editors/atom-bin-1.7.3 ~amd64" >> /etc/portage/package.accept_keywords
+echo ">=app-text/ghostscript-gpl-9.15-r1 cups" >> /etc/portage/package.use/atom-bin
+echo ">=app-crypt/pinentry-0.9.5 gnome-keyring" >> /etc/portage/package.use/atom-bin
+echo ">=app-crypt/gcr-3.18.0 gtk" >> /etc/portage/package.use/atom-bin
+emerge -av app-editors/atom-bin
