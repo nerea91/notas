@@ -95,3 +95,23 @@
    Una instancia de EC2 desplegada en un VPC a la que se asocia una IP elástica la mantiene al detener la instancia y volverla a iniciar, por lo que no no es necesario cambiar la IP.
 
    Una instancia de RDS no tiene una IP asociada, tiene un nombre DNS. El nombre DNS no cambia al hacer una operación de cambio de tipo de instancia.
+   
+
+   
+Instalar aws cli:
+
+Instalar pip
+
+emerge --ask dev-python/pip
+
+Instalar aws cli
+
+pip install awscli
+
+Comandos para aws EC2
+
+http://docs.aws.amazon.com/cli/latest/reference/ec2/index.html
+
+Lo básico de EC2
+
+http://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-launch.html
