@@ -18,6 +18,9 @@ md5 por sha1 y añadir .'.php'
 
 Para ejecutar un script despues de cada commit crear dentro del proyecto el archivo .git/hooks/post-commit y poner ahí el script
 
+Error header may not contain more than a single header: este error se produce porque en el header se pone una consulta con \n, para solucionarlo en la consulta
+que da el error utilizar preg_replace("/\n/i","",$query). 
+
 
 TPV
 ===================================================================================================================
