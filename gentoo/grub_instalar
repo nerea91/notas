@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ -z $1 ];then
+    echo "Modo de uso: $0 [device(sdx)] [device(hdx)]"
+    echo "Ejemplo: $0 /dev/sda hd0"
+    echo "         $0 /dev/sdb hd1"
+else
+    if [ -z $2 ];then
+	echo "ERROR Falta un parametro"
+    else
+grub --no-floppy --batch <<EOF
+device (${2}) $1
+root (${2},0)
+setup (${2})
+EOF
+
+fi
+fi

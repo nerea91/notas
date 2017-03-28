@@ -52,3 +52,10 @@ emerge -avu $(eix perl -I#u)
 DISPLAY=:0 XAUTHORITY=/home/nerea/.Xauthority  glxinfo | grep -i yes
 
 tiene que aparecer direct rendering: Yes
+
+#Recuperar MBR disponiendo de una máquina con las mismas particiones
+dd if=/dev/sdX of=/root/mbrGPT.mbr bs=512 count=1#copia del mbr roto
+⁠⁠⁠dd if=/dev/sdX of=/root/mbrORIGINAL.mbr bs=512 count=1#copia del mbr bueno
+dd if=/dev/sdBUENO of=/dev/sdROTO bs=446 count=1#copia del mbr bueno al roto
+Si con 446 no basta poner 512 
+Ejecutar script grub_instalar
