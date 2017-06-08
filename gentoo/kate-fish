@@ -1,0 +1,3 @@
+fish://root@ip/var/www 
+
+fish://root@ip:port/var/www
