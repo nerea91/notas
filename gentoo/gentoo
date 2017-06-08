@@ -59,3 +59,10 @@ dd if=/dev/sdX of=/root/mbrGPT.mbr bs=512 count=1#copia del mbr roto
 dd if=/dev/sdBUENO of=/dev/sdROTO bs=446 count=1#copia del mbr bueno al roto
 Si con 446 no basta poner 512 
 Ejecutar script grub_instalar
+
+
+#Para calcular las dependencias de un paquete antes de desinstalarlo
+emerge -pv --deepclen paquete 
+
+#Si al hacer emerge nos da un error  required by @selected significa que esta en @world, por lo que lo desinstalamos
+emerge -av --depclean paquete

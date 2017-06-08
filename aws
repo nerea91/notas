@@ -123,3 +123,20 @@ http://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html
 Recover unreachable Linux Instance
 
 https://aws.amazon.com/articles/5213606968661598
+
+Para dar permisos al usuario vm-import-export@amazon.com en s3
+
+Añadir el usuario con id segun region:
+•China (Beijing)
+	834bafd86b15b6ca71074df0fd1f93d234b9d5e848a2cb31f880c149003ce36f
+•AWS GovCloud (US)
+ af913ca13efe7a94b88392711f6cfc8aa07c9d1454d4f190a624b126733a5602
+•All other regions
+c4d8eabf8db69dbe46bfe0e517100c554f01200b104d59cd408e777ba442a322
+
+Para exportar una insatncia a un bucket de s3:
+aws ec2 create-instance-export-task --instance-id id --target-environment target_environment --export-to-s3-task DiskImageFormat=disk_image_format,ContainerFormat=ova,S3Bucket=bucket,S3Prefix=prefix
+example:
+aws ec2 create-instance-export-task --instance-id i-04a39c90 --target-environment vmware --export-to-s3-task DiskImageFormat=VMDK,ContainerFormat=ova,S3Bucket=degestec-bucket,S3Prefix=my-exports --region  eu-central-1
+Para ver el estado del export
+aws ec2 describe-export-tasks --export-task-ids taskid
