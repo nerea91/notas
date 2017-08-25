@@ -1,0 +1,2 @@
+#Para renombrar todos los ficheros que acaben con php cambiando la primera letra a mayúcula
+for i in *php; do mv $i "$(tr '[:lower:]' '[:upper:]' <<< ${i:0:1})${i:1}";done 
