@@ -66,3 +66,7 @@ emerge -pv --deepclen paquete
 
 #Si al hacer emerge nos da un error  required by @selected significa que esta en @world, por lo que lo desinstalamos
 emerge -av --depclean paquete
+
+#qt en orden
+emerge -qa1 $(qlist -IC dev-qt/qt)
+emerge -avu $(eix -#I dev-qt/*)
