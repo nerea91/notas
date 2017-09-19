@@ -21,6 +21,8 @@ Para ejecutar un script despues de cada commit crear dentro del proyecto el arch
 Error header may not contain more than a single header: este error se produce porque en el header se pone una consulta con \n, para solucionarlo en la consulta
 que da el error utilizar preg_replace("/\n/i","",$query). 
 
+Si al hacer login nos da un error creating default object from empty value revisar que el usuario tenga una cuenta.
+
 
 TPV
 ===================================================================================================================
