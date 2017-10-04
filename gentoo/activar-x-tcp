@@ -31,4 +31,7 @@ xhost +
 Para conectarte:
 
 ssh -Y user@host
+
+*Nota: para poder conectarnos por ssh a la maquina virtual cambiar NAT por adaptador puente y en la máquina virtual antes de ejecutar el programa con X remota:
+export DISPLAY=ip_ordenador_local:0.0
 *********************************************
