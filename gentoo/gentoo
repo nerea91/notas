@@ -70,3 +70,7 @@ emerge -av --depclean paquete
 #qt en orden
 emerge -qa1 $(qlist -IC dev-qt/qt)
 emerge -avu $(eix -#I dev-qt/*)
+
+/**/
+#Conflicto dev-lang/python is blocking dev-lang/python-exec
+emerge -avu --nodeps $(eix -I# python)

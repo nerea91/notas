@@ -40,3 +40,16 @@ Para cambiar el idioma en la página de informes hay que cambiar el idioma del u
 
 http://informes/index.php?lang=en_US # donde en_US es el idioma al que queremos cambiar
 ===================================================================================================================
+
+General
+===================================================================================================================
+Si no se imprime el fondo del color original, verificar que el navegador no tenga desactivado imprimir a color y añadir !important a la regla del color.
+Para que se imprima una div scrollable por ejemplo con id #main
+@media print{
+	#main{
+			width: auto !important;
+			height: auto !important;
+			overflow: visible  !important;
+		}
+}
+===================================================================================================================
