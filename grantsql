@@ -1,2 +1,7 @@
 GRANT SELECT ON database.* TO user@'localhost' IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
+
+
+
+select user from mysql.db where db='database';
+SHOW GRANTS for user@localhost;

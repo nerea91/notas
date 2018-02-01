@@ -1,3 +1,26 @@
 #borrar archivo grande del repositorio
 git filter-branch --tree-filter 'rm path/to/your/bigfile' HEAD
 git push origin master --force
+
+#ver el historial de un solo fichero
+git log -p -- path/to/file
+
+# Eliminar una rama local
+git branch -d $branch
+
+# Eliminar una rama remota
+git push origin :$branch
+
+# Eliminar las ramas remotas que ya no existan en origin (Ambos comandos hacen lo mismo)
+# Ejecutar con --dry-run para ver los cambios que realizará 
+git fetch -p
+git remote prune origin
+
+# Deshacer el último commit (sin haber hecho push)
+git reset --soft HEAD~1
+
+# Deshacer el último commit (habiendo hecho ya un push)
+git revert HEAD
+
+# Recuperarse de un desastre 
+http://www.bluemangolearning.com/blog/2009/03/recovering-from-a-disastrous-git-rebase-mistake/
