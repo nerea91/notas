@@ -1,0 +1,15 @@
+        # Do not accept load from iframe
+        add_header X-Frame-Options "SAMEORIGIN" always;
+
+        # This means any bookmarks, links or addresses the user types will be forced to use HTTPS, even if they specify HTTP
+        add_header Strict-Transport-Security "max-age=31536000; includeSubdomains" always;
+
+        # enforce TLS on all assets and prevent mixed content warnings
+        add_header Content-Security-Policy "default-src * data: 'unsafe-inline' 'unsafe-eval'";
+        #add_header Content-Security-Policy "default-src https: data: 'unsafe-inline' 'unsafe-eval'" always;
+
+        # X-Xss protection
+        add_header X-Xss-Protection "1; mode=block" always;
+
+        # It prevents Google Chrome and Internet Explorer from trying to mime-sniff the content-type of a response away from the one being declared by the server. It reduces exposure to drive-by downloads and the risks of user uploaded content that, with clever naming, could be treated as a different content-type, like an executable
+        add_header X-Content-Type-Options "nosniff" always;

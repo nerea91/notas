@@ -140,3 +140,14 @@ example:
 aws ec2 create-instance-export-task --instance-id i-04a39c90 --target-environment vmware --export-to-s3-task DiskImageFormat=VMDK,ContainerFormat=ova,S3Bucket=degestec-bucket,S3Prefix=my-exports --region  eu-central-1
 Para ver el estado del export
 aws ec2 describe-export-tasks --export-task-ids taskid
+
+#Si hemos instalado awscli como local y queremos ejecutarlo desde crontab hace falta hacer enlaces simbolicos
+ln -s /root/.local/lib64/python3.4/site-packages/awscli  /usr/lib64/python3.4/site-packages/awscli
+ln -s /root/.local/lib64/python3.4/site-packages/botocore /usr/lib64/python3.4/site-packages/botocore
+ln -s /root/.local/lib64/python3.4/site-packages/dateutil /usr/lib64/python3.4/site-packages/dateutil
+ln -s /root/.local/lib64/python3.4/site-packages/docutils /usr/lib64/python3.4/site-packages/docutils
+ln -s /root/.local/lib64/python3.4/site-packages/jmespath /usr/lib64/python3.4/site-packages/jmespath
+ln -s /root/.local/lib64/python3.4/site-packages/pyasn1 /usr/lib64/python3.4/site-packages/pyasn1  
+ln -s /root/.local/lib64/python3.4/site-packages/rsa /usr/lib64/python3.4/site-packages/rsa   
+ln -s /root/.local/lib64/python3.4/site-packages/s3transfer /usr/lib64/python3.4/site-packages/s3transfer
+ln -s /root/.local/lib64/python3.4/site-packages/yaml /usr/lib64/python3.4/site-packages/yaml      
