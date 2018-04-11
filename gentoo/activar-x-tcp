@@ -12,6 +12,12 @@ ejecutar xhost +
 *********************************************
 PLASMA
 *********************************************
+En /etc/sddm.conf poner
+
+ServerArguments=-listen tcp
+#ServerArguments=-nolisten tcp
+
+*********************************************
 si Xorg esta compilado con ipv6 compilar sin ello
 
 USE="-ipv6" emerge -a --newuse x11-base/xorg-server

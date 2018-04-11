@@ -1,3 +1,7 @@
 Para aumentar el numero filas que te deja borrar mysql editar en /etc/mysql/my.cnf:
 
 innodb_data_file_path = ibdata1:10M:autoextend:max:1G # donde 1G es el tamaño que queremos poner
+
+Para poner nueva contraseña a root
+
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass')
