@@ -5,6 +5,9 @@ Para actualizar repositorio
  svn update *
  svn update
  
+Para revertir todos los cambios
+ svn revert -R .
+ 
 Para ver los ficheros cambiados entre revisiones
  svn log -v -r rev_ini:rev_fin
  
@@ -17,6 +20,9 @@ Para añadir archivos+
  
 Para borrar archivos
  svn delete archivo.src carpeta/
+ 
+Para subir los cambios
+ svn ci -m "blabla"
  
 Para cambiar la url del repo
  svn switch --relocate ruta_al_repo_antiguo nombre_del_repo_nuevo
