@@ -141,13 +141,26 @@ aws ec2 create-instance-export-task --instance-id i-04a39c90 --target-environmen
 Para ver el estado del export
 aws ec2 describe-export-tasks --export-task-ids taskid
 
-#Si hemos instalado awscli como local y queremos ejecutarlo desde crontab hace falta hacer enlaces simbolicos
-ln -s /root/.local/lib64/python3.4/site-packages/awscli  /usr/lib64/python3.4/site-packages/awscli
-ln -s /root/.local/lib64/python3.4/site-packages/botocore /usr/lib64/python3.4/site-packages/botocore
-ln -s /root/.local/lib64/python3.4/site-packages/dateutil /usr/lib64/python3.4/site-packages/dateutil
-ln -s /root/.local/lib64/python3.4/site-packages/docutils /usr/lib64/python3.4/site-packages/docutils
-ln -s /root/.local/lib64/python3.4/site-packages/jmespath /usr/lib64/python3.4/site-packages/jmespath
-ln -s /root/.local/lib64/python3.4/site-packages/pyasn1 /usr/lib64/python3.4/site-packages/pyasn1  
-ln -s /root/.local/lib64/python3.4/site-packages/rsa /usr/lib64/python3.4/site-packages/rsa   
-ln -s /root/.local/lib64/python3.4/site-packages/s3transfer /usr/lib64/python3.4/site-packages/s3transfer
-ln -s /root/.local/lib64/python3.4/site-packages/yaml /usr/lib64/python3.4/site-packages/yaml      
+#En caso de que se instale awscli sobre el usuario:
+
+    -Para utilizarlo globalmente añadir al .bashrc del usuario:  export PATH=~/.local/bin:$PATH y ejecutar source ~/.bash_profile
+    -Si se quiere utilizar en un script que se va a lanzar en el crontab hay que:
+        -Añadir la variable:  AWS_CONFIG_FILE=/root/.aws/config cambiando root por el usuario al que pertenezca en el crontab.
+        -Crear los enlaces simbólicos necesarios para python:
+            ln -s /root/.local/lib64/python3.5/site-packages/awscli /usr/lib64/python3.5/site-packages/awscli
+            ln -s /root/.local/lib64/python3.5/site-packages/botocore  /usr/lib64/python3.5/site-packages/botocore
+            ln -s /root/.local/lib64/python3.5/site-packages/dateutil /usr/lib64/python3.5/site-packages/dateutil
+            ln -s /root/.local/lib64/python3.5/site-packages/colorama /usr/lib64/python3.5/site-packages/colorama
+            ln -s /root/.local/lib64/python3.5/site-packages/docutils /usr/lib64/python3.5/site-packages/docutils
+            ln -s /root/.local/lib64/python3.5/site-packages/jmespath /usr/lib64/python3.5/site-packages/jmespath
+            ln -s /root/.local/lib64/python3.5/site-packages/pyasn1 /usr/lib64/python3.5/site-packages/pyasn1
+            ln -s /root/.local/lib64/python3.5/site-packages/rsa /usr/lib64/python3.5/site-packages/rsa
+            ln -s /root/.local/lib64/python3.5/site-packages/s3transfer /usr/lib64/python3.5/site-packages/s3transfer
+            ln -s /root/.local/lib64/python3.5/site-packages/yaml /usr/lib64/python3.5/site-packages/yaml
+            ln -s /root/.local/lib64/python3.5/site-packages/six.py /usr/lib64/python3.5/site-packages/six.py
+
+# Borra los ficheros parciales que no sean de hoy o ayer de AWS
+for i in $(aws s3 ls s3://nombre_s3/Carpeta/ | awk '{print $4}' | grep 'parcial' | grep -v `date +%F` | grep -v `date --date="last day" +%F`); do aws s3 rm s3://nombre_s3/Carpeta/$i;done;
+
+#Sync S3
+aws s3 sync /carpeta/a/sincronizar s3://nombre_s3/Carpeta/ >> /var/log/aws.log
