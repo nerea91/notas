@@ -3,3 +3,12 @@ que va a hacer. Quitar para realizar la copia. La barra del final solo tiene
 que estar en uno de los dos ejem: /home/nerea/ /home-nerea
 
 rsync --recursive --archive --progress --stats --dry-run --human-readable -x origen destino
+
+
+Backup
+sudo rsync -aAXv / --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} /mnt
+
+-aAXv – The files are transferred in “archive” mode, which ensures that symbolic links, devices, permissions, ownerships, modification times, ACLs, and extended attributes are preserved.
+/ – Source directory
+–exclude – Excludes the given directories from backup.
+/mnt – It is the backup destination folder.
