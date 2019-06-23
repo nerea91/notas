@@ -1,0 +1,15 @@
+#Para renombrar todos los ficheros que acaben con php cambiando la primera letra a mayúcula
+for i in *php; do mv $i "$(tr '[:lower:]' '[:upper:]' <<< ${i:0:1})${i:1}";done 
+
+#Buscar ficheros grandes
+find / -type f -not -path "/proc/*" -not -path "/dev/*" -not -path "/sys/*" -size +6G
+
+#ejecutar comando por ssh
+ssh -p $puerto root@$ip 'comando'
+
+#bucle con source
+el archivo tiene formato: 
+nombre="item1
+item2
+item3"
+source archivo ;for i in ${nombre[*]};do echo $i;echo "************";echo "";ordenAEjecutar;ssh -p$puerto $i;done

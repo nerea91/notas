@@ -1,0 +1,1 @@
+modificar en /etc/bash/bashrc o ejecutar PS1="ps1 aqui", ejemplo:  PS1="\[\033]0;\u@\h:\w\007\]\[\033[01;31m\]Kazajistan-\h\[\033[01;34m\] \W \$\[\033[00m\]"

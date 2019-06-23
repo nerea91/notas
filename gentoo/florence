@@ -1,0 +1,7 @@
+To change language
+
+setxkbmap lang
+Examples:
+setxkbmap es
+setxkbmap us
+setxkbmap ru

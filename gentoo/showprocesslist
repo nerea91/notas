@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Introduce el password de la base de datos:"
+read -s pass
+while true;do
+        mysql -p$pass -e "status;" | egrep '(Questions)' | egrep -v '(Warning)'
+        mysql -p$pass -e 'show processlist;' | egrep -v '(Warning)'
+#       mysql -p$pass -e "show status where variable_name = 'Threads_connected';" | egrep '(Threads_connected)'
+        sleep 1
+        clear
+done

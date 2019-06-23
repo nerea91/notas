@@ -1,0 +1,8 @@
+// import from database 
+php artisan doctrine:mapping:import annotation
+
+// generte entities
+php artisan doctrine:generate:entities
+
+php artisan doctrine:generate:entities --update-entities
+php artisan doctrine:generate:entities --regenerate-entities

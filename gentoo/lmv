@@ -1,0 +1,24 @@
+#para ver los grupos disponibles
+vgdisplay
+
+#Crear lvm
+lvcreate -L 200G -n nombrelvm nombre_vgrupo
+ej: lvcreate -L 200G -n seguridad raid1
+
+#para ver lvm disponibles
+lvdisplay
+
+#dar formato a la particion
+mkfs.ext4 /dev/raid1/seguridad
+
+#poner label
+e2label /dev/raid1/seguridad Seguridad
+
+#montar todo
+mount -a
+
+#para extender
+umount /home/seguridad
+lvextend -L+5G /dev/raid1/seguridad
+mount /home/seguridad
+resize2fs /dev/raid1/seguridad

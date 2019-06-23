@@ -9,3 +9,7 @@ Si al hacer mysqldump nos da el siguiente error:
 	Access denied for user 'USER'@'localhost' to database 'DBNAME' when using LOCK TABLES
 
 	- mysqldump --opt --lock-tables=false -u USER -p DBNAME > dump.sql
+
+#backup comprimido
+mysqldump --single-transaction -u $USUARIO -p`echo $PASSW` -h localhost --opt $BD | gzip -f --best > $ARCHIVO
+chmod 400 $ARCHIVO

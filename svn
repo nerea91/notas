@@ -1,0 +1,57 @@
+Para traer repositorio
+ svn co url_repo
+
+Para actualizar repositorio
+ svn update *
+ svn update
+ 
+Para revertir todos los cambios
+ svn revert -R .
+ 
+Para ver los ficheros cambiados entre revisiones
+ svn log -v -r rev_ini:rev_fin
+ 
+Para mostrar los cambios entre revisiones de un fichero
+ svn diff  -r revision fichero
+ svn diff --diff-cmd='meld' -r revision fichero
+
+Para añadir archivos+
+ svn add archivo.src carpeta/
+ 
+Para borrar archivos
+ svn delete archivo.src carpeta/
+ 
+Para subir los cambios
+ svn ci -m "blabla"
+ 
+Para cambiar la url del repo
+ svn switch --relocate ruta_al_repo_antiguo nombre_del_repo_nuevo
+ 
+Para ver el estado de la copia de trabajo
+ svn status
+ 
+ En el comando anterior estos son los posibles estados:
+ 
+   ' ' no hay modificaciones
+     'A' Agregado
+     'C' Presenta conflicto
+     'D' Eliminado
+     'I' Ignorado
+     'M' Modificado
+     'R' Reemplazado
+     'X' Este ítem no está versionado, pero es usado por una
+         definición de externals
+     '?' el ítem no está bajo control de versiones
+     '!' ítem faltante (removido por un comando ajeno a svn) o incompleto
+     '~' ítem versionado obstruido por algún otro ítem de un tipo diferente
+     'L' Copia bloqueada
+ 
+ La información de actualización aparece en la octava columna (con -u):
+     '*' hay una nueva revisión en el servidor
+     ' ' la copia de trabajo está actualizada
+
+ Los campos restantes son de ancho variable y están delimitados por espacios:
+   La revisión de trabajo (con -u o -v)
+   La ultima revisión que se hizo commit y su autor(con -v)
+   La ruta de copia de trabajo siempre es el último campo, para que
+   pueda contener espacios en blanco.

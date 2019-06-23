@@ -1,0 +1,19 @@
+Arrancar desde el clonador
+Seleccionar la primera entrada
+En seleccionar disco le damos a cancelar
+cfdisk /dev/sda
+	Borrar todas las particiones y write
+	Si hay más discos repetir
+cd /livemnt/boot
+bash clonador_usb
+OK primer muenu con discos seleccionados *
+Seleccionar servidorraid
+Seleccionar la imagen que queramos
+La primera vez suele fallar repetir desde bash clonador_usb
+Asegurarse que los rais son raid1
+Cuando termine halt quitar el clonador y arrancar
+
+Poner red:
+	editar /etc/udev/rules.d/70-my-network.rules y poner las macs de las tarjetas (ifconfig -a)
+	No se sabe el orden hay que probar pero suelen ir en orden natural y la que es distinta la última (tarjeta2)
+

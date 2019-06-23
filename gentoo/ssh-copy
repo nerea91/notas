@@ -1,0 +1,3 @@
+Si no tenemos clave la generamos: ssh-keygen
+
+ssh-copy-id -p $puerto -i ~/.ssh/id_rsa.pub root@$sala

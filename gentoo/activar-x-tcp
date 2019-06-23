@@ -1,3 +1,5 @@
+KDE4
+********************************************
 editar /usr/share/config/kdm/kdmrc y cambiar 
 	ServerArgsLocal=-nolisten tcp 
 	
@@ -7,3 +9,35 @@ editar /usr/share/config/kdm/kdmrc y cambiar
 	
 	
 ejecutar xhost +
+*********************************************
+PLASMA
+*********************************************
+En /etc/sddm.conf poner
+
+ServerArguments=-listen tcp
+#ServerArguments=-nolisten tcp
+
+*********************************************
+si Xorg esta compilado con ipv6 compilar sin ello
+
+USE="-ipv6" emerge -a --newuse x11-base/xorg-server
+
+En el servidor remoto(máquina virtual) poner en /etc/ssh/sshd_config
+
+AddressFamily inet
+X11Forwarding yes
+
+en ambos, en el ordenador local y en el remoto ejecutar
+
+xauth list 
+
+En el ordenador local ejecutar
+xhost +
+
+Para conectarte:
+
+ssh -Y user@host
+
+*Nota: para poder conectarnos por ssh a la maquina virtual cambiar NAT por adaptador puente y en la máquina virtual antes de ejecutar el programa con X remota:
+export DISPLAY=ip_ordenador_local:0.0
+*********************************************

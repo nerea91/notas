@@ -1,0 +1,15 @@
+Para aumentar el numero filas que te deja borrar mysql editar en /etc/mysql/my.cnf:
+
+innodb_data_file_path = ibdata1:10M:autoextend:max:1G # donde 1G es el tamaño que queremos poner
+
+Para poner nueva contraseña a root
+
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass')
+
+#Barracuda
+show variables like "%innodb_file%";
+SET GLOBAL innodb_file_format = barracuda;
+SET GLOBAL innodb_file_format_max = barracuda;
+ALTER TABLE t ROW_FORMAT=DYNAMIC;
+
+select CONCAT("Alter Table `", TABLE_SCHEMA,"`.`", TABLE_NAME, "` ROW_FORMAT=DYNAMIC;") as MySQLCMD from information_schema.TABLES where TABLE_SCHEMA = "database";

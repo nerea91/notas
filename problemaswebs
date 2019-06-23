@@ -21,6 +21,8 @@ Para ejecutar un script despues de cada commit crear dentro del proyecto el arch
 Error header may not contain more than a single header: este error se produce porque en el header se pone una consulta con \n, para solucionarlo en la consulta
 que da el error utilizar preg_replace("/\n/i","",$query). 
 
+Si al hacer login nos da un error creating default object from empty value revisar que el usuario tenga una cuenta.
+
 
 TPV
 ===================================================================================================================
@@ -37,4 +39,17 @@ Informes
 Para cambiar el idioma en la página de informes hay que cambiar el idioma del usuario o entrar añadiendo ?lang=en_US a la url
 
 http://informes/index.php?lang=en_US # donde en_US es el idioma al que queremos cambiar
+===================================================================================================================
+
+General
+===================================================================================================================
+Si no se imprime el fondo del color original, verificar que el navegador no tenga desactivado imprimir a color y añadir !important a la regla del color.
+Para que se imprima una div scrollable por ejemplo con id #main
+@media print{
+	#main{
+			width: auto !important;
+			height: auto !important;
+			overflow: visible  !important;
+		}
+}
 ===================================================================================================================
